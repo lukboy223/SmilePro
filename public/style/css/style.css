@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body * {
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  height: 3em;
+  width: 100%;
+  position: relative;
+}
+header nav {
+  position: relative;
+  display: flex;
+  z-index: 1;
+  translate: 0% -100%;
+  transition: translate 0.5s ease, z-index -3s;
+}
+header nav .menuNavbar {
+  margin: 0;
+  width: 35%;
+  background-color: #367571;
+  height: 100vh;
+}
+header nav .menuNavbar ul {
+  width: 100%;
+  padding: 0;
+  height: 100%;
+}
+header nav .menuNavbar ul li {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  margin-top: 4em;
+  justify-content: center;
+}
+header nav .menuNavbar ul li a {
+  font-size: 2em;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+header nav .sideBackgroundNavbar {
+  width: 65%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+header .open {
+  translate: 0 0 !important;
+}
+header .NavbarOpener {
+  position: absolute;
+  top: 0;
+  margin: 1em;
+  z-index: 2;
+  cursor: pointer;
+}
+header .NavbarOpener.open:before {
+  transform: translateY(13px) rotate(135deg);
+  background: white;
+}
+header .NavbarOpener.open:after {
+  transform: translateY(-12px) rotate(-135deg);
+  background: white;
+}
+header .NavbarOpener.open div {
+  transform: scale(0);
+}
+header .AccountNavbarMenu {
+  position: absolute;
+  top: 0;
+  margin: 1em;
+  right: 0;
+  font-size: 1.2em;
+}
+header .AccountNavbarMenu a {
+  color: black;
+  text-decoration: none;
+}
+header .NavbarOpener:before,
+header .NavbarOpener:after,
+header .NavbarOpener div {
+  background: black;
+  content: " ";
+  display: block;
+  height: 6px;
+  width: 60px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
+
+/*# sourceMappingURL=style.css.map */
