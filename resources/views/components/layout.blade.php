@@ -14,7 +14,8 @@
         href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
         rel="stylesheet">
     {{-- bootstrap --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     {{-- style css --}}
     <link rel="stylesheet" href="{{ Asset('style/css/style.css') }}">
 </head>
@@ -24,11 +25,24 @@
         {{-- the navbar O: Amazing! --}}
         <nav class="navbar">
             <div class="menuNavbar">
-                <ul>
+                <ul class="menuNavbarUl">
                     <li><a href="/">Home</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="/contact">Contact</a></li>
                 </ul>
+                <div class="AccountNavbar">
+                    <div class="navbarLine"></div>
+                    @guest
+                    <ul class="AccountNavbarUl">
+                        <li>
+                            <a href="">Log in</a>
+                        </li>
+                        <li>
+                            <a href="">Sign up</a>
+                        </li>
+                    </ul>
+                    @endguest
+                </div>
             </div>
             {{-- that black thing on the side of the navbar --}}
             <div class="sideBackgroundNavbar" onclick="openNavbar()">
@@ -41,21 +55,21 @@
         </div>
         <div class="AccountNavbarMenu">
             @guest
-                <a href="">Log in</a> | <a href="">Sign up</a>
+            <a href="">Log in</a> | <a href="">Sign up</a>
             @endguest
             @auth
-                aaaaaaaaaaaaaaaa
+            still needs to be made, or make it yourself dummy ╚|•⌂•|╝
             @endauth
         </div>
     </header>
 
     <main>
-        {{-- all your code will be pasted here when you use the layout thingy, \(〃＾▽＾〃)/  --}}
+        {{-- all your code will be pasted here when you use the layout thingy, \(〃＾▽＾〃)/ --}}
         {{ $slot }}
     </main>
 </body>
 
-{{-- hacker javascript file, I hacked iran with this one \(￣︶￣*\))  --}}
+{{-- hacker javascript file, I hacked iran with this one \(￣︶￣*\)) --}}
 <script src="{{ asset('js/script.js') }}"></script>
 
 </html>

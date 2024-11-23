@@ -1,3 +1,41 @@
+.homeSection1 {
+  padding: 4em;
+  width: 100%;
+  justify-content: space-between;
+}
+.homeSection1 .homeSection1Text {
+  margin-top: 6em;
+}
+.homeSection1 .homeSection1Text h1 {
+  font-size: 5em;
+}
+.homeSection1 .homeSection1Text p {
+  font-size: 1.5em;
+}
+.homeSection1 .homeSection1Text button {
+  border-style: none;
+  padding: 1em;
+  background-color: #5F1A37;
+  color: white;
+  font-size: 1.3em;
+}
+.homeSection1 .homeSection1Img {
+  height: 40em;
+}
+.homeSection1 .homeSection1Img img {
+  margin-right: 4em;
+  float: right;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.homeSection2 {
+  background-color: #85C9C6;
+  width: 100%;
+  height: 30em;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,11 +49,12 @@ body {
 }
 
 header {
+  position: relative;
   height: 3em;
   width: 100%;
-  position: relative;
 }
 header nav {
+  padding: 0 !important;
   position: relative;
   display: flex;
   z-index: 1;
@@ -23,30 +62,59 @@ header nav {
   transition: translate 0.5s ease, z-index -3s;
 }
 header nav .menuNavbar {
+  position: relative;
   margin: 0;
   width: 35%;
   background-color: #367571;
   height: 100vh;
 }
-header nav .menuNavbar ul {
+header nav .menuNavbar .menuNavbarUl {
   width: 100%;
   padding: 0;
-  height: 100%;
 }
-header nav .menuNavbar ul li {
+header nav .menuNavbar .menuNavbarUl li {
   list-style: none;
   width: 100%;
   display: flex;
   margin-top: 4em;
   justify-content: center;
 }
-header nav .menuNavbar ul li a {
+header nav .menuNavbar .menuNavbarUl li a {
+  font-size: 2em;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+header nav .menuNavbar .AccountNavbar {
+  position: absolute;
+  bottom: 4em;
+  width: 100%;
+}
+header nav .menuNavbar .AccountNavbar .navbarLine {
+  margin: auto;
+  width: 80%;
+  height: 5px;
+  background-color: white;
+  border-radius: 90px;
+}
+header nav .menuNavbar .AccountNavbar .AccountNavbarUl {
+  padding: 0;
+}
+header nav .menuNavbar .AccountNavbar .AccountNavbarUl li {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1em;
+}
+header nav .menuNavbar .AccountNavbar .AccountNavbarUl li a {
   font-size: 2em;
   text-align: center;
   text-decoration: none;
   color: white;
 }
 header nav .sideBackgroundNavbar {
+  height: 100vh;
   width: 65%;
   background-color: rgba(0, 0, 0, 0.5);
 }
