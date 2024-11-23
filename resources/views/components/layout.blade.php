@@ -32,6 +32,9 @@
                 </ul>
                 <div class="AccountNavbar">
                     <div class="navbarLine"></div>
+
+                    {{-- guest checks if your logged into an account or not if not then guest will show, kind of like an
+                    if statement --}}
                     @guest
                     <ul class="AccountNavbarUl">
                         <li>
@@ -42,6 +45,11 @@
                         </li>
                     </ul>
                     @endguest
+                    {{-- auth checks if your logged into an account or not if yes then auth will show, kind of like an
+                    if statement --}}
+                    @auth
+                    still needs to be made, or make it yourself dummy ╚|•⌂•|╝
+                    @endauth
                 </div>
             </div>
             {{-- that black thing on the side of the navbar --}}
@@ -67,9 +75,14 @@
         {{-- all your code will be pasted here when you use the layout thingy, \(〃＾▽＾〃)/ --}}
         {{ $slot }}
     </main>
+
+    {{-- look the footer has shoes!!!!! --}}
+    <footer>
+        👞👞
+    </footer>
 </body>
 
-{{-- hacker javascript file, I hacked iran with this one \(￣︶￣*\)) --}}
+{{-- hacker javascript file, I hacked Iraq with this one \(￣︶￣*\)) --}}
 <script src="{{ asset('js/script.js') }}"></script>
 
 </html>
