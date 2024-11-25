@@ -78,7 +78,42 @@
 
     {{-- look the footer has shoes!!!!! --}}
     <footer>
-        👞👞
+        <div class="footerTopSection row">
+            <div class="col-lg-5 col-12 footerNavbar">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About us</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-1">
+                <div class="footerLine"></div>
+            </div>
+            <div class="col-lg-5 col-12 footerContact">
+                <h3>Contact information</h3>
+                <ul>
+                    <li>
+                        <strong>Tel:</strong> <br>
+                        123456789
+                    </li>
+                    <li>
+                        <strong>Email:</strong> <br>
+                        SmilePro@mail.com
+                    </li>
+                    <li>
+                        <strong>Address</strong> <br>
+                        123 somethinglane <br>
+                        1234 AB The City <br>
+                        The Country
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerBottomSection">
+            <a href="">Privacy Policy</a>
+            <p>Trademarked by Project group</p>
+            <p>Luka, Bilal, Sola, Mohamed & Shuhd</p>
+        </div>
     </footer>
 </body>
 

@@ -17,7 +17,7 @@
         </div>
         {{-- cool img --}}
         <div class="col-12 col-lg-6 homeSection1Img">
-            <img src="{{ asset('img/homeImg1.jpg')}}" alt="homeImg1">
+            <img src="{{ asset('img/homeImg1.jpg')}}" alt="homeImg1" class="col-12 col-lg-10">
         </div>
     </section>
 
@@ -44,7 +44,7 @@
     <section class="homeSection3 row">
         {{-- cool img --}}
         <div class="col-12 col-lg-6 homeSection3Img">
-            <img src="{{ asset('img/homeImg2.jpg')}}" alt="homeImg2">
+            <img src="{{ asset('img/homeImg2.jpg')}}" alt="homeImg2" class="col-12 col-lg-10">
         </div>
 
         {{-- has the very interesting and totally not generated text of chatgpt in it --}}
@@ -62,7 +62,7 @@
 
     {{-- fourth section of the homepage --}}
     <section class="homeSection4 row">
-        <div class="homeSection4TextCont col-5">
+        <div class="homeSection4TextCont col-lg-5 col-12">
             <div class="homeSection4Text">
                 <h3>Jeffery John</h3>
                 <p>
@@ -84,10 +84,10 @@
                 </p>
             </div>
         </div>
-        <div class="homeSection4Img col-7">
-            <img src="{{ asset('img/DoctorImg1.png')}}" alt="Doctor1">
-            <img src="{{ asset('img/DoctorImg2.png')}}" alt="Doctor2">
-            <img src="{{ asset('img/DoctorImg3.png')}}" alt="Doctor3">
+        <div class="homeSection4ImgCont col-lg-7 col-12">
+            <img src="{{ asset('img/DoctorImg1.png')}}" alt="Doctor1" class="homeSection4Img1">
+            <img src="{{ asset('img/DoctorImg2.png')}}" alt="Doctor2" class="homeSection4Img2">
+            <img src="{{ asset('img/DoctorImg3.png')}}" alt="Doctor3" class="homeSection4Img3">
         </div>
     </section>
 
