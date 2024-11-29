@@ -1,3 +1,7 @@
+//home page styling
+
+
+//top section of the homepage with text on the left and image on the right
 .homeSection1{
     padding: 4em;
     width: 100%;
@@ -29,6 +33,8 @@
         }
     }
 }
+
+//second section of the homepage, blue bar with 3 texts in it
 .homeSection2{
     margin: 0;
     background-color: #85C9C6;
@@ -49,6 +55,8 @@
         font-size: 1.2em;
     }
 }
+
+//third section of the homepage, text on the right and image on the left
 .homeSection3{
     padding: 4em;
     width: 100%;
@@ -79,6 +87,7 @@
         }
     }
 }
+//underneath the third section, it's just a black line across the screen
 .HomeLine{
     width: 90%;
     margin: auto;
@@ -86,6 +95,7 @@
     height: 5px;
     border-radius: 90px;
 }
+//fourth and last section of the homepage with the 3 images of employees on them
 .homeSection4{
     padding: 6em;
     width: 100%;
@@ -102,9 +112,6 @@
             color: white;
             h3{
                 font-size: 2.5em;
-            }
-            p{
-
             }
         }
     }
@@ -123,9 +130,17 @@
         img{
             width: 100%;
             object-fit: cover;
-            object-position: center;
             height: 31em;
             
+        }
+        .homeSection4Img1{
+            object-position: 0% 20%;
+        }
+        .homeSection4Img2{
+            object-position: top;
+        }
+        .homeSection4Img3{
+            object-position: 0% 22%;
         }
         .homeSection4Img2{
             height: 29em !important;

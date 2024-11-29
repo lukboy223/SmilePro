@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {{-- when you write
+
+    <x-slot:title>
+        -your title-
+    </x-slot:title>
+
+    on inside the layout element it will be filled into the title, to give the page a title O: --}}
     <title>{{ $title }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -76,10 +83,11 @@
         {{ $slot }}
     </main>
 
-    {{-- look the footer has shoes!!!!! --}}
+    {{-- look the footer, give him some shoes --}}
     <footer>
         <div class="footerTopSection row">
             <div class="col-lg-5 col-12 footerNavbar">
+                {{-- footer navbar menu  --}}
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">About us</a></li>
@@ -89,6 +97,7 @@
             <div class="col-1">
                 <div class="footerLine"></div>
             </div>
+            {{-- footer contact information  --}}
             <div class="col-lg-5 col-12 footerContact">
                 <h3>Contact information</h3>
                 <ul>
@@ -109,6 +118,7 @@
                 </ul>
             </div>
         </div>
+        {{-- gray bar underneath the footer   --}}
         <div class="footerBottomSection">
             <a href="">Privacy Policy</a>
             <p>Trademarked by Project group</p>

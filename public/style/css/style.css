@@ -122,8 +122,16 @@
 .homeSection4 .homeSection4ImgCont img {
   width: 100%;
   object-fit: cover;
-  object-position: center;
   height: 31em;
+}
+.homeSection4 .homeSection4ImgCont .homeSection4Img1 {
+  object-position: 0% 20%;
+}
+.homeSection4 .homeSection4ImgCont .homeSection4Img2 {
+  object-position: top;
+}
+.homeSection4 .homeSection4ImgCont .homeSection4Img3 {
+  object-position: 0% 22%;
 }
 .homeSection4 .homeSection4ImgCont .homeSection4Img2 {
   height: 29em !important;

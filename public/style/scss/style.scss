@@ -164,6 +164,7 @@ header {
     }
 }
 
+//footer styling
 footer {
     .footerTopSection {
         margin: 0;
@@ -179,7 +180,7 @@ footer {
             width: 5px;
             background-color: white;
         }
-
+        //footer navbar styling
         .footerNavbar {
             ul {
                 padding: 0;
@@ -201,7 +202,7 @@ footer {
                 }
             }
         }
-
+        //footer contact information styling
         .footerContact {
             ul {
                 padding: 0;
@@ -222,7 +223,7 @@ footer {
         }
 
     }
-
+    //footer gray bar styling
     .footerBottomSection {
         background-color: #2C2C2C;
         width: 100%;

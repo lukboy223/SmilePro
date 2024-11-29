@@ -1,4 +1,6 @@
 <x-layout>
+
+    {{-- gives the page a custom title, see line 8 from layout.blade.php  --}}
     <x-slot:title>
         Home
     </x-slot:title>
@@ -17,7 +19,7 @@
         </div>
         {{-- cool img --}}
         <div class="col-12 col-lg-6 homeSection1Img">
-            <img src="{{ asset('img/homeImg1.jpg')}}" alt="homeImg1" class="col-12 col-lg-10">
+            <img src="{{ asset('img/homeImg1.jpg')}}" alt="homeImg1" class="col-12 col-lg-9">
         </div>
     </section>
 
@@ -44,7 +46,7 @@
     <section class="homeSection3 row">
         {{-- cool img --}}
         <div class="col-12 col-lg-6 homeSection3Img">
-            <img src="{{ asset('img/homeImg2.jpg')}}" alt="homeImg2" class="col-12 col-lg-10">
+            <img src="{{ asset('img/homeImg2.jpg')}}" alt="homeImg2" class="col-12 col-lg-9">
         </div>
 
         {{-- has the very interesting and totally not generated text of chatgpt in it --}}
@@ -64,6 +66,7 @@
     <section class="homeSection4 row">
         <div class="homeSection4TextCont col-lg-5 col-12">
             <div class="homeSection4Text">
+                {{-- our doctor descriptions  --}}
                 <h3>Jeffery John</h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quidem, veritatis impedit quas soluta assumenda accusantium, quos nam quo laudantium repellat cum praesentium. Dolores delectus culpa excepturi tempore enim a.
@@ -84,6 +87,7 @@
                 </p>
             </div>
         </div>
+        {{-- images of our dentists and not random people I found on the internet --}}
         <div class="homeSection4ImgCont col-lg-7 col-12">
             <img src="{{ asset('img/DoctorImg1.png')}}" alt="Doctor1" class="homeSection4Img1">
             <img src="{{ asset('img/DoctorImg2.png')}}" alt="Doctor2" class="homeSection4Img2">
