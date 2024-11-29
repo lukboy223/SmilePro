@@ -1,11 +1,15 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AvailabilityController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/availability', [AvailabilityController::class, 'index'])->name('availability.index');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
