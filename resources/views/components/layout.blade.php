@@ -8,7 +8,7 @@
     {{-- when you write
 
     <x-slot:title>
-        -your title-
+        *your title*
     </x-slot:title>
 
     on inside the layout element it will be filled into the title, to give the page a title O: --}}
