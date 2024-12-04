@@ -83,7 +83,7 @@
         {{ $slot }}
     </main>
 
-    {{-- look the footer, give him some shoes --}}
+    {{-- look the footer, give him some shoes!! --}}
     <footer>
         <div class="footerTopSection row">
             <div class="col-lg-5 col-12 footerNavbar">
