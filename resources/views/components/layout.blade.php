@@ -45,10 +45,10 @@
                     @guest
                     <ul class="AccountNavbarUl">
                         <li>
-                            <a href="">Log in</a>
+                            <a href="{{ route('login') }}">Log in</a>
                         </li>
                         <li>
-                            <a href="">Sign up</a>
+                            <a href="{{ route('register') }}">Sign up</a>
                         </li>
                     </ul>
                     @endguest
@@ -70,7 +70,7 @@
         </div>
         <div class="AccountNavbarMenu">
             @guest
-            <a href="">Log in</a> | <a href="">Sign up</a>
+            <a href="{{ route('login') }}">Log in</a> | <a href="{{ route('register') }}">Sign up</a>
             @endguest
             @auth
             still needs to be made, or make it yourself dummy ╚|•⌂•|╝
