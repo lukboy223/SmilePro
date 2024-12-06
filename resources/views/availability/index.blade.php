@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beschikbaarheid</title>
-    @vite('resources/css/app.css') <!-- Zorg dat je deze regel toevoegt -->
+    @vite('resources/css/app.css') <!-- styling -->
 </head>
 <body class="bg-gray-100 text-white-800">
     <div class="container mx-auto py-8">
         <h1 class="text-2xl font-bold text-center mb-6">Beschikbaarheid</h1>
-        <div class="overflow-x-auto">
+        <div class="overflow-x-auto mx-auto max-w-6xl">
             <table class="table-auto w-full bg-white border-collapse border border-gray-200 shadow-md">
-                <thead class="bg-gray-100 text-gray-600">
+                <thead style="background-color: #5F1A37;" class="text-white">
                     <tr>
                         <th class="px-4 py-2 border border-gray-300">MedewerkerId</th>
                         <th class="px-4 py-2 border border-gray-300">Datum vanaf</th>
@@ -34,7 +34,12 @@
                     @endforeach
                 </tbody>
             </table>
-        </div>
+            <!-- Knop naar dashboard -->
+            <div class="flex justify-end mt-4">
+                <a href="/"
+                class="bg-[#5F1A37] text-white px-6 py-2 rounded font-semibold shadow-md transition">Dashboard</a>
+            </div>
+        </div>  
     </div>
 </body>
 </html>

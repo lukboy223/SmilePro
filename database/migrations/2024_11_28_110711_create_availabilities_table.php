@@ -21,6 +21,8 @@ return new class extends Migration
             $table->time('FormTime');
             $table->time('ToTime');
             $table->enum('Status', ['Present', 'Absent', 'Leave', 'Sick']); // Enum column
+            $table->boolean('IsActive')->default(true);
+            $table->string('Note');
             $table->timestamps();
         });
     }
