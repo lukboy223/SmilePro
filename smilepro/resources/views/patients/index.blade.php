@@ -10,14 +10,10 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($person as $people)
+            @foreach($person as $persons)
             <tr>
-                <td class="py-2 px-4 border-b border-gray-200">{{ $people->FirstName }}</td>
-                <td class="py-2 px-4 border-b border-gray-200">{{ $people->MiddleName }}</td>
-                <td class="py-2 px-4 border-b border-gray-200">{{ $people->LastName }}</td>
-                <td class="py-2 px-4 border-b border-gray-200">{{ $people->BirthDate }}</td>
-                <td class="py-2 px-4 border-b border-gray-200">{{ $people->IsActive }}</td>
-                <td class="py-2 px-4 border-b border-gray-200">{{ $people->Note }}</td>
+                <td class="py-2 px-4 border-b border-gray-200">{{ $persons->FirstName }}</td>
+
             </tr>
             @endforeach
         </tbody>

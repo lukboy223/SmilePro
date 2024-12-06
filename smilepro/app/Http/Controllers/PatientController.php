@@ -1,22 +1,19 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Person;
 
 use Illuminate\Http\Request;
+use App\Models\Patient;
 
-
-class PersonController extends Controller
+class PatientController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $persons = Person::all(); // Fetch all persons
-        return view('persons.index', compact('persons')); // Ensure the view path is correct
-    }  
-
+        // 
+    }
 
     /**
      * Show the form for creating a new resource.

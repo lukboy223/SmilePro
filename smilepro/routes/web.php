@@ -9,7 +9,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/patients', [PersonController::class, 'index'])->name('patients.index');
+// Route::get('/patients', [PatientsController::class, 'index'])->name('patients.index'); 
+Route::get('/persons', [PersonController::class, 'index'])->name('persons.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -11,16 +11,14 @@ return new class extends Migration
      
     public function up(): void
     {
-        Schema::create('person', function (Blueprint $table) {
+        Schema::create('persons', function (Blueprint $table) {
             $table->id();
             $table->string('FirstName', 50);
-            $table->string('MiddleName', 5)->nullable();
+            $table->string('MiddleName', 50)->nullable();
             $table->string('LastName', 50);
             $table->date('BirthDate');
             $table->boolean('IsActive');
             $table->string('Note', 255)->nullable();
-            $table->timestamp('CreatedDate', 6)->useCurrent();
-            $table->timestamp('UpdatedDate', 6)->useCurrent()->useCurrentOnUpdate();
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ return new class extends Migration
      // Reverse the migrations.
     public function down(): void
     {
-        Schema::dropIfExists('person');
+        Schema::dropIfExists('persons');
     }
 };
