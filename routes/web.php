@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-// Beschikbaarheid view
+// Beschikbaarheid view (laat de beschikbaarheid table te zien in de browser (alleen voor de admin))
 Route::get('/availability', [AvailabilityController::class, 'index'])->name('availability.index');
 
-// Birechten view
+// Birechten view (laat de birechten table te zien in de browser (alleen voor de admin))
 Route::get('/communication', [CommunicationController::class, 'index'])->name('communication.index');
 
 

@@ -38,4 +38,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('communications');
     }
+// Om te kunnen pushen want het is clean
 };
