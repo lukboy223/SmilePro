@@ -31,6 +31,8 @@
                 </tbody>
             </table>
             <!-- Knop naar dashboard -->
+<!--WAARSCHUWING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
+<!-- Momenteel wordt het dootgestuurd naar de homepage (wanneer we een Dashbaord page hebben kunnen jullie die hier aanpassen!) -->
             <div class="flex justify-end mt-4">
                 <a href="/"
                 class="bg-[#5F1A37] text-white px-6 py-2 rounded font-semibold shadow-md transition">Dashboard</a>
