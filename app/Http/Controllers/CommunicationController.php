@@ -15,5 +15,5 @@ class CommunicationController extends Controller
         // Stuur de gegevens naar de view 'beschikbaarheid.index'
         return view('Communication.index', ['communications' => $communications]);
     }
-// Om te kunnen pushen want het is clean
+// test
 }
