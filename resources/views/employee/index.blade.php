@@ -46,9 +46,13 @@
             @endforeach
 
         </table>
+        {{-- pagination buttons --}}
         <div>
             {{$employees->links()}}
-       
+        </div>
+        <div class="overviewMederwerkersButtons">
+            <a href="">Medewerker toevoegen</a>
+            <a href="{{ route('dashboard') }}">Back to dashboard</a>
         </div>
     </section>
 </x-layout>
