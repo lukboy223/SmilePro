@@ -25,6 +25,13 @@
                     Naam
                 </th>
             </tr>
+            @if($employees->isEmpty())
+            <tr>
+                <td colspan="5" class="errorTableRow">
+                    Geen werknemers kunnen vinden, probeer het later opnieuw
+                </td>
+            </tr>
+            @else
             @foreach($employees as $employee)
             <tr>
                 <td>
@@ -44,6 +51,7 @@
                 </td>
             </tr>
             @endforeach
+            @endif
 
         </table>
         {{-- pagination buttons --}}

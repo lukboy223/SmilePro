@@ -149,6 +149,11 @@
   border: solid 1px black;
   padding: 0.5em;
 }
+.MedewerkerOverzichtTable .errorTableRow {
+  background-color: #8e0000;
+  color: white;
+  text-align: center;
+}
 
 .MedewerkerOverzichtTableHeader {
   background-color: #5F1A37;
