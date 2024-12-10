@@ -18,6 +18,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/EmployeeView', [employeeController::class, 'index'])->name('employee.index');
+Route::get('/EmployeeView', [employeeController::class, 'index'])->middleware(['auth', 'verified'])->name('employee.index');
 
 require __DIR__.'/auth.php';

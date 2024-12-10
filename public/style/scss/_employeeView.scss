@@ -1,0 +1,40 @@
+.MedewerkerOverzichtTable{
+    width: 80%;
+    margin: auto;
+    margin-top: 5em;
+    margin-bottom: 5em;
+
+    td{
+        border: solid 1px black;
+        padding: 0.5em;
+    }
+}
+
+.MedewerkerOverzichtTableHeader{
+    background-color: #5F1A37;
+    color: white;
+}
+
+.Pagination{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    margin-bottom: 2em;
+
+    a{
+        text-decoration: none;
+        color: black;
+        background-color: white;
+        border: solid 2px black;
+        width: 9em;
+        height: 3em;
+        text-align: center;
+        padding: 0.7em;
+    }
+    span{
+        @extend a;
+        background-color: #E9E9E9;
+    }
+}

@@ -22,7 +22,8 @@ class EmployeeFactory extends Factory
         return [
             'PersonId' => \App\Models\Person::factory(),
             'Number' => $this->faker->unique()->numerify('EMP###'),
-            'EmployeeType' => $this->faker->randomElement(['Full-time', 'Part-time', 'Contract']),
+            'Specialization' => $this->faker->text(20),
+            'EmployeeType' => $this->faker->randomElement(['Dentist', 'Assistant', 'Management']),
             'Availability' => $this->faker->text(100)
         ];
     }

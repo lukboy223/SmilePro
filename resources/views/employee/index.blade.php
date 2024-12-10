@@ -6,8 +6,8 @@
     </x-slot:title>
     <section>
 
-        <table>
-            <tr>
+        <table class="MedewerkerOverzichtTable">
+            <tr class="MedewerkerOverzichtTableHeader">
 
                 <th>
                     Medewerker ID
@@ -25,9 +25,30 @@
                     Naam
                 </th>
             </tr>
+            @foreach($employees as $employee)
             <tr>
-
+                <td>
+                    {{$employee->id}}
+                </td>
+                <td>
+                    {{$employee->EmployeeType}}
+                </td>
+                <td>
+                    {{$employee->Specialization}}
+                </td>
+                <td>
+                    {{$employee->Number}}
+                </td>
+                <td>
+                    {{$employee->FirstName}} {{$employee->middleName}} {{$employee->LastName}}
+                </td>
             </tr>
+            @endforeach
+
         </table>
+        <div>
+            {{$employees->links()}}
+       
+        </div>
     </section>
 </x-layout>
