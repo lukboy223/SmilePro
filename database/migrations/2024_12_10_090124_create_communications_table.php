@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('availabilities', function (Blueprint $table) {
+        Schema::create('communications', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\Patient::class, 'PatientId')  // Foreign key reference to Employee
+            ->constrained()  // Automatically references the 'employees' table and 'id' column
+            ->cascadeOnDelete();  // Deletes associated rows in availabilities if the Employee is deleted
             $table->foreignIdFor(\App\Models\Employee::class, 'EmployeeId')  // Foreign key reference to Employee
             ->constrained()  // Automatically references the 'employees' table and 'id' column
             ->cascadeOnDelete();  // Deletes associated rows in availabilities if the Employee is deleted
-            $table->date('FormDate');
-            $table->date('ToDate');
-            $table->time('FormTime');
-            $table->time('ToTime');
-            $table->enum('Status', ['Present', 'Absent', 'Leave', 'Sick']); // Enum column
+            $table->text('Message');
+            $table->time('SentDate');
             $table->boolean('IsActive');
             $table->text('Note');
             $table->timestamps();
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('availabilities');
+        Schema::dropIfExists('communications');
     }
 };

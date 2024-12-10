@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AvailabilityController;
+use App\Http\Controllers\CommunicationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -9,6 +10,8 @@ Route::get('/', function () {
 });
 
 Route::get('/availability', [AvailabilityController::class, 'index'])->name('availability.index');
+
+Route::get('/communication', [CommunicationController::class, 'index'])->name('communication.index');
 
 
 Route::get('/dashboard', function () {
