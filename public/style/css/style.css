@@ -332,4 +332,27 @@ footer .footerBottomSection p {
   margin-bottom: 0.5em;
 }
 
+.Pagination {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.Pagination a, .Pagination span {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border: solid 2px black;
+  width: 9em;
+  height: 3em;
+  text-align: center;
+  padding: 0.7em;
+}
+.Pagination span {
+  background-color: #E9E9E9 !important;
+}
+
+
 /*# sourceMappingURL=style.css.map */

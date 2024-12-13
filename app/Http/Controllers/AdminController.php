@@ -3,14 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Admin;
+use App\Models\Gebruiker;
 
 class AdminController extends Controller
 {
     public function index()
     {
-        $admins = Admin::all();
-        return view('admin.index', compact('admins'));
+        $admins = Gebruiker::all();
+        return view('admin.index');
     }
 
     public function create()
@@ -26,7 +26,7 @@ class AdminController extends Controller
             'password' => 'required|min:8',
         ]);
 
-        $admin = Admin::create([
+        $admin = Gebruiker::create([
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'password' => bcrypt($validatedData['password']),
@@ -37,19 +37,19 @@ class AdminController extends Controller
 
     public function show($id)
     {
-        $admin = Admin::findOrFail($id);
+        $admin = Gebruiker::findOrFail($id);
         return view('admin.show', compact('admin'));
     }
 
     public function edit($id)
     {
-        $admin = Admin::findOrFail($id);
+        $admin = Gebruiker::findOrFail($id);
         return view('admin.edit', compact('admin'));
     }
 
     public function update(Request $request, $id)
     {
-        $admin = Admin::findOrFail($id);
+        $admin = Gebruiker::findOrFail($id);
 
         $validatedData = $request->validate([
             'name' => 'required|max:255',
@@ -68,7 +68,7 @@ class AdminController extends Controller
 
     public function destroy($id)
     {
-        $admin = Admin::findOrFail($id);
+        $admin = Gebruiker::findOrFail($id);
         $admin->delete();
         return redirect()->route('admin.index')->with('success', 'Admin deleted successfully.');
     }
