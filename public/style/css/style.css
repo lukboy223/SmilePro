@@ -158,6 +158,10 @@
 .MedewerkerOverzichtTableHeader {
   background-color: #5F1A37;
   color: white;
+  border-left: 1px solid #5F1A37;
+}
+.MedewerkerOverzichtTableHeader th {
+  padding: 0.5em;
 }
 
 .Pagination {
