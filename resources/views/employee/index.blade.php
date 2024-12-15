@@ -4,6 +4,9 @@
     <x-slot:title>
         Overview employees
     </x-slot:title>
+    <h1 class="MederwerkerOverzichtTitel">Medewerker overzicht</h1>
+    <div class="HomeLine"></div>
+
     <section>
 
         <table class="MedewerkerOverzichtTable">
