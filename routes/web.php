@@ -24,6 +24,13 @@ Route::middleware('auth')->group(function () {
 });
 Route::resource('admin', UserController::class);
 Route::get('/user/index', [UserController::class, 'index'])->name('user.index');
+Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
+Route::patch('/user/update/{id}', [UserController::class, 'update'])->name('user.update');
+Route::delete('/user/destroy/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+
+
+
+
 
 
 require __DIR__.'/auth.php';

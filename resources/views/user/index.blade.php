@@ -16,6 +16,8 @@
                             <th class="px-4 py-2 border border-gray-300">Role Id</th>
                             <th class="px-4 py-2 border border-gray-300">Name</th>
                             <th class="px-4 py-2 border border-gray-300">Email</th>
+                            <th class="px-4 py-2 border border-gray-300">Edit</th>
+                            <th class="px-4 py-2 border border-gray-300">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -30,6 +32,19 @@
                                     <td class="px-4 py-2 border border-gray-300">{{ $user->Roleid }}</td>
                                     <td class="px-4 py-2 border border-gray-300">{{ $user->name }}</td>
                                     <td class="px-4 py-2 border border-gray-300">{{ $user->email }}</td>
+                                    <td class="px-4 py-2 border border-gray-300">
+                                        <a href="{{ route('user.edit', $user->id) }}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded">
+                                            Edit
+                                        </a>
+                                    </td>
+                                    <td class="px-4 py-2 border border-gray-300">
+                                        <form action="{{ route('user.destroy', $user->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded">
+                                                Delete
+                                            </button>
+                                        </form>
                                 </tr>
                             @endforeach
                         @endif
