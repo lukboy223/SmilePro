@@ -23,13 +23,13 @@
                     <tbody>
                         @if ($users->isEmpty())
                         <tr>
-                            <td class="px-4 py-2 border border-gray-300" colspan="4">Unable to load accounts, please try again later.</td>
+                            <td class="px-4 py-2 border border-gray-300" colspan="4">Kan accounts niet laden. Probeer het later opnieuw</td>
                         </tr>
                         @else
                         @foreach ($users as $user)
                         <tr class="text-center hover:bg-gray-50">
                             <td class="px-4 py-2 border border-gray-300">{{ $user->id }}</td>
-                            <td class="px-4 py-2 border border-gray-300">{{ $user->Roleid }}</td>
+                            <td class="px-4 py-2 border border-gray-300">{{ $user->role_id }}</td>
                             <td class="px-4 py-2 border border-gray-300">{{ $user->name }}</td>
                             <td class="px-4 py-2 border border-gray-300">{{ $user->email }}</td>
                             <td class="px-4 py-2 border border-gray-300">
