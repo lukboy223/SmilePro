@@ -1,0 +1,335 @@
+.homeSection1 {
+  padding: 4em;
+  width: 100%;
+  justify-content: space-between;
+}
+.homeSection1 .homeSection1Text {
+  margin-top: 6em;
+}
+.homeSection1 .homeSection1Text h1 {
+  font-size: 5em;
+}
+.homeSection1 .homeSection1Text p {
+  font-size: 1.5em;
+}
+.homeSection1 .homeSection1Text button {
+  border-style: none;
+  padding: 1em;
+  background-color: #5F1A37;
+  color: white;
+  font-size: 1.3em;
+}
+.homeSection1 .homeSection1Img {
+  height: 40em;
+}
+.homeSection1 .homeSection1Img img {
+  float: right;
+  object-fit: cover;
+  object-position: center;
+}
+
+.homeSection2 {
+  margin: 0;
+  background-color: #85C9C6;
+  width: 100%;
+  padding: 4em;
+  justify-content: space-between;
+}
+.homeSection2 .homeSection2Text2 {
+  text-align: center;
+}
+.homeSection2 .homeSection2Text3 {
+  text-align: end;
+}
+.homeSection2 h2 {
+  font-size: 3em;
+}
+.homeSection2 p {
+  font-size: 1.2em;
+}
+
+.homeSection3 {
+  padding: 4em;
+  width: 100%;
+  justify-content: space-between;
+}
+.homeSection3 .homeSection3Text {
+  margin-top: 6em;
+  text-align: end;
+}
+.homeSection3 .homeSection3Text h1 {
+  font-size: 5em;
+}
+.homeSection3 .homeSection3Text p {
+  font-size: 1.5em;
+}
+.homeSection3 .homeSection3Text button {
+  border-style: none;
+  padding: 1em;
+  background-color: #5F1A37;
+  color: white;
+  font-size: 1.3em;
+}
+.homeSection3 .homeSection3Img {
+  height: 40em;
+}
+.homeSection3 .homeSection3Img img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.HomeLine {
+  width: 90%;
+  margin: auto;
+  background-color: black;
+  height: 5px;
+  border-radius: 90px;
+}
+
+.homeSection4 {
+  padding: 6em;
+  width: 100%;
+}
+.homeSection4 .homeSection4TextCont {
+  position: relative;
+  padding-left: 4em;
+  padding-top: 4em;
+  padding-bottom: 4em;
+  padding-right: 0;
+  background-color: #776885;
+}
+.homeSection4 .homeSection4TextCont .homeSection4Text {
+  height: 25em;
+  padding: 3em;
+  color: white;
+}
+.homeSection4 .homeSection4TextCont .homeSection4Text h3 {
+  font-size: 2.5em;
+}
+.homeSection4 .homeSection4Line {
+  position: relative;
+  width: 80%;
+  height: 5px;
+  background-color: white;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  right: -9em;
+}
+.homeSection4 .homeSection4ImgCont {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.homeSection4 .homeSection4ImgCont img {
+  width: 100%;
+  object-fit: cover;
+  height: 31em;
+}
+.homeSection4 .homeSection4ImgCont .homeSection4Img1 {
+  object-position: 0% 20%;
+}
+.homeSection4 .homeSection4ImgCont .homeSection4Img2 {
+  object-position: top;
+}
+.homeSection4 .homeSection4ImgCont .homeSection4Img3 {
+  object-position: 0% 22%;
+}
+.homeSection4 .homeSection4ImgCont .homeSection4Img2 {
+  height: 29em !important;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body * {
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  position: relative;
+  height: 3em;
+  width: 100%;
+}
+header nav {
+  padding: 0 !important;
+  position: relative;
+  display: flex;
+  z-index: 1;
+  translate: 0% -100%;
+  transition: translate 0.5s ease, z-index -3s;
+}
+header nav .menuNavbar {
+  position: relative;
+  margin: 0;
+  width: 35%;
+  background-color: #367571;
+  height: 100vh;
+}
+header nav .menuNavbar .menuNavbarUl {
+  width: 100%;
+  padding: 0;
+}
+header nav .menuNavbar .menuNavbarUl li {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  margin-top: 4em;
+  justify-content: center;
+}
+header nav .menuNavbar .menuNavbarUl li a {
+  font-size: 2em;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+header nav .menuNavbar .AccountNavbar {
+  position: absolute;
+  bottom: 4em;
+  width: 100%;
+}
+header nav .menuNavbar .AccountNavbar .navbarLine {
+  margin: auto;
+  width: 80%;
+  height: 5px;
+  background-color: white;
+  border-radius: 90px;
+}
+header nav .menuNavbar .AccountNavbar .AccountNavbarUl {
+  padding: 0;
+}
+header nav .menuNavbar .AccountNavbar .AccountNavbarUl li {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1em;
+}
+header nav .menuNavbar .AccountNavbar .AccountNavbarUl li a {
+  font-size: 2em;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+header nav .sideBackgroundNavbar {
+  height: 100vh;
+  width: 65%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+header .open {
+  translate: 0 0 !important;
+}
+header .NavbarOpener {
+  position: absolute;
+  top: 0;
+  margin: 1em;
+  z-index: 2;
+  cursor: pointer;
+}
+header .NavbarOpener.open:before {
+  transform: translateY(13px) rotate(135deg);
+  background: white;
+}
+header .NavbarOpener.open:after {
+  transform: translateY(-12px) rotate(-135deg);
+  background: white;
+}
+header .NavbarOpener.open div {
+  transform: scale(0);
+}
+header .AccountNavbarMenu {
+  position: absolute;
+  top: 0;
+  margin: 1em;
+  right: 0;
+  font-size: 1.2em;
+}
+header .AccountNavbarMenu a {
+  color: black;
+  text-decoration: none;
+}
+header .NavbarOpener:before,
+header .NavbarOpener:after,
+header .NavbarOpener div {
+  background: black;
+  content: " ";
+  display: block;
+  height: 6px;
+  width: 60px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
+}
+
+footer .footerTopSection {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  background-color: #659B99;
+  justify-content: space-between;
+  color: white;
+  padding: 3em;
+}
+footer .footerTopSection .footerLine {
+  height: 100%;
+  width: 5px;
+  background-color: white;
+}
+footer .footerTopSection .footerNavbar ul {
+  padding: 0;
+}
+footer .footerTopSection .footerNavbar ul li {
+  display: flex;
+  list-style: none;
+  justify-content: end;
+  width: 100%;
+  margin-top: 1em;
+}
+footer .footerTopSection .footerNavbar ul li a {
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+footer .footerTopSection .footerContact ul {
+  padding: 0;
+}
+footer .footerTopSection .footerContact ul li {
+  list-style: none;
+  text-align: start;
+  width: 100%;
+  margin-top: 1em;
+  color: white;
+  font-size: 1.2em;
+  color: white;
+}
+footer .footerTopSection .footerContact ul li strong {
+  font-size: 1.3em;
+}
+footer .footerBottomSection {
+  background-color: #2C2C2C;
+  width: 100%;
+  color: #A5A5A5;
+  display: flex;
+  flex-direction: column;
+}
+footer .footerBottomSection a {
+  color: #A5A5A5;
+  width: 100%;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+footer .footerBottomSection p {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+/*# sourceMappingURL=style.css.map */
