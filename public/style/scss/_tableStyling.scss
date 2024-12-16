@@ -1,4 +1,4 @@
-.MedewerkerOverzichtTable{
+.OverzichtTable{
     width: 80%;
     margin: auto;
     margin-top: 5em;
@@ -15,7 +15,7 @@
     }
 }
 
-.MedewerkerOverzichtTableHeader{
+.OverzichtTableHeader{
     background-color: #5F1A37;
     color: white;
     border-left: 1px solid #5F1A37;
@@ -47,7 +47,7 @@
         background-color: #E9E9E9;
     }
 }
-.overviewMederwerkersButtons{
+.overviewButtons{
     margin: auto;
     width: 80%;
     display: flex;
@@ -64,7 +64,7 @@
         padding: 0.7em;
     }
 }
-.MederwerkerOverzichtTitel{
+.OverzichtTitel{
     width: 100%;
     text-align: center;
     margin-top: 2em;

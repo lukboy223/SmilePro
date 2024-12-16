@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $foreignId = $table->foreignId('PersonId');
             $foreignId->constrained('person');
-            $table->string('Number', length:50)->unique();
+            $table->string('Number', length:50);
             $table->text('MedicalRecord');
             $table->string('Note', length:255)->nullable()->default(null);
             $table->boolean('IsActive')->default(true);

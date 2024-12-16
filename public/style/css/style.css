@@ -139,28 +139,28 @@
   margin-bottom: 5px;
 }
 
-.MedewerkerOverzichtTable {
+.OverzichtTable {
   width: 80%;
   margin: auto;
   margin-top: 5em;
   margin-bottom: 5em;
 }
-.MedewerkerOverzichtTable td {
+.OverzichtTable td {
   border: solid 1px black;
   padding: 0.5em;
 }
-.MedewerkerOverzichtTable .errorTableRow {
+.OverzichtTable .errorTableRow {
   background-color: #8e0000;
   color: white;
   text-align: center;
 }
 
-.MedewerkerOverzichtTableHeader {
+.OverzichtTableHeader {
   background-color: #5F1A37;
   color: white;
   border-left: 1px solid #5F1A37;
 }
-.MedewerkerOverzichtTableHeader th {
+.OverzichtTableHeader th {
   padding: 0.5em;
 }
 
@@ -186,7 +186,7 @@
   background-color: #E9E9E9;
 }
 
-.overviewMederwerkersButtons {
+.overviewButtons {
   margin: auto;
   width: 80%;
   display: flex;
@@ -194,7 +194,7 @@
   margin-top: 2em;
   margin-bottom: 2em;
 }
-.overviewMederwerkersButtons a, .overviewMederwerkersButtons .Pagination span, .Pagination .overviewMederwerkersButtons span {
+.overviewButtons a, .overviewButtons .Pagination span, .Pagination .overviewButtons span {
   text-decoration: none;
   color: white;
   background-color: #5F1A37;
@@ -204,7 +204,7 @@
   padding: 0.7em;
 }
 
-.MederwerkerOverzichtTitel {
+.OverzichtTitel {
   width: 100%;
   text-align: center;
   margin-top: 2em;
