@@ -13,16 +13,14 @@ return new class extends Migration
     {
         Schema::create('availabilities', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(\App\Models\Employee::class, 'EmployeeId')  // Foreign key reference to Employee
-            ->constrained()  // Automatically references the 'employees' table and 'id' column
-            ->cascadeOnDelete();  // Deletes associated rows in availabilities if the Employee is deleted
+            $table->unsignedBigInteger('EmployeeId');
             $table->date('FormDate');
             $table->date('ToDate');
             $table->time('FormTime');
             $table->time('ToTime');
             $table->enum('Status', ['Present', 'Absent', 'Leave', 'Sick']); // Enum column
             $table->boolean('IsActive')->default(true);
-            $table->string('Note');
+            $table->string('Note')->nullable()->default(null);
             $table->timestamps();
         });
     }

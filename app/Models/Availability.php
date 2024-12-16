@@ -2,8 +2,10 @@
 
 namespace App\Models;
 
+use App\Models\Availability;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+
 
 class Availability extends Model
 {

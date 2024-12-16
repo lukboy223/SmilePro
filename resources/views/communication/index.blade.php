@@ -22,15 +22,17 @@
                 <tbody>
                     @foreach($communications as $Communication)
                         <tr class="text-center hover:bg-gray-50">
-                            <td class="px-4 py-2 border border-gray-300">{{$Communication->patient_id}}</td>
-                            <td class="px-4 py-2 border border-gray-300">{{$Communication->employee_id}}</td>     
+                            <td class="px-4 py-2 border border-gray-300">{{$Communication->PatientId}}</td>
+                            <td class="px-4 py-2 border border-gray-300">{{$Communication->EmployeeId}}</td>     
                             <td class="px-4 py-2 border border-gray-300">{{$Communication->Message}}</td>
                             <td class="px-4 py-2 border border-gray-300">{{$Communication->SentDate}}</td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            <!-- Knop naar dashboard -->
+            {{ $communications->links() }}
+
+<!-- Knop naar dashboard -->
 <!--WAARSCHUWING!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
 <!-- Momenteel wordt het dootgestuurd naar de homepage (wanneer we een Dashbaord page hebben kunnen jullie die hier aanpassen!) -->
             <div class="flex justify-end mt-4">

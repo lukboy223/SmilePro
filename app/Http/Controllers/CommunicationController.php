@@ -10,7 +10,8 @@ class CommunicationController extends Controller
     public function index()
     {
         // Haal alle gegevens op uit de 'beschikbaarheid'-tabel
-        $communications = Communication::all();
+        $communications = Communication::simplePaginate(25);
+
 
         // Stuur de gegevens naar de view 'beschikbaarheid.index'
         return view('Communication.index', ['communications' => $communications]);

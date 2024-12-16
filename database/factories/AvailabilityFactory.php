@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+use App\Models\Employee;
+use App\Models\Availability;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +19,12 @@ class AvailabilityFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'EmployeeId' => Employee::factory(), // Assuming you have an Employee model and factory
+            'FormDate' => $this->faker->date(),
+            'ToDate' => $this->faker->date(),
+            'FormTime' => $this->faker->time(),
+            'ToTime' => $this->faker->time(),
+            'Status' => $this->faker->randomElement(['Leave', 'Present']),
         ];
     }
 }

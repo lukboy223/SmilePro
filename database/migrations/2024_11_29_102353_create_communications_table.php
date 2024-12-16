@@ -14,21 +14,15 @@ return new class extends Migration
         Schema::create('communications', function (Blueprint $table) {
             $table->id();
             // Foreign key reference to patients
-            $table->foreignId('patient_id')
-            ->constrained('patients') // Explicitly reference the 'patients' table
-            ->cascadeOnDelete();
-  
+            $table->unsignedBigInteger('PatientId');
             // Foreign key reference to employees
-            $table->foreignId('employee_id')
-            ->constrained('employees') // Explicitly reference the 'employees' table
-            ->cascadeOnDelete();
-            
+            $table->unsignedBigInteger('EmployeeId');
             $table->text('Message');
             $table->time('SentDate');
-            $table->boolean('IsActive')->default(true); 
-            $table->text('Note')->nullable();          
+            $table->boolean( 'IsActive')->default(true);
+            $table->string('Note')->nullable()->default(null);
             $table->timestamps();
-        });
+        });        
     }
 
     /**
