@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    @vite('resources/css/app.css') 
+    @vite('resources/css/app.css')
     {{-- when you write
 
     <x-slot:title>
@@ -56,7 +56,8 @@
                     {{-- auth checks if your logged into an account or not if yes then auth will show, kind of like an
                     if statement --}}
                     @auth
-                    still needs to be made, or make it yourself dummy ╚|•⌂•|╝
+
+                    {{-- <a href="{{ route('dashboard')}}" style="text-decoration: underline">dashboard</a> --}}
                     @endauth
                 </div>
             </div>
@@ -74,7 +75,7 @@
             <a href="{{ route('login') }}">Log in</a> | <a href="{{ route('register') }}">Sign up</a>
             @endguest
             @auth
-            still needs to be made, or make it yourself dummy ╚|•⌂•|╝
+            <a href="{{ route('dashboard')}}" style="text-decoration: underline">dashboard</a>
             @endauth
         </div>
     </header>
@@ -88,7 +89,7 @@
     <footer>
         <div class="footerTopSection row">
             <div class="col-lg-5 col-12 footerNavbar">
-                {{-- footer navbar menu  --}}
+                {{-- footer navbar menu --}}
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">About us</a></li>
@@ -98,7 +99,7 @@
             <div class="col-1">
                 <div class="footerLine"></div>
             </div>
-            {{-- footer contact information  --}}
+            {{-- footer contact information --}}
             <div class="col-lg-5 col-12 footerContact">
                 <h3>Contact information</h3>
                 <ul>
@@ -119,7 +120,7 @@
                 </ul>
             </div>
         </div>
-        {{-- gray bar underneath the footer   --}}
+        {{-- gray bar underneath the footer --}}
         <div class="footerBottomSection">
             <a href="">Privacy Policy</a>
             <p>Trademarked by Project group</p>

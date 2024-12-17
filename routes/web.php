@@ -18,7 +18,8 @@ Route::get('/dashboard', function () {
 route::get('/about', function () {
     return view('about');
 });
- Route::get('/home', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+// Route::get('/home', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -29,6 +30,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/admin', function () {
     return view('admin.adminhome');
 })->middleware(['auth', 'verified', CheckAdmin::class])->name('admin');
+
 
 Route::get('/user/index', [UserController::class, 'index'])->name('user.index');
 Route::get('/user/edit/{id}', [UserController::class, 'edit'])->name('user.edit');
