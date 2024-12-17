@@ -21,6 +21,8 @@
                 <div class="p-6 text-gray-900">
                     <?php echo e(__("You're logged in!")); ?>
 
+                    <?php echo e(__("as a user")); ?>
+
                 </div>
             </div>
         </div>
