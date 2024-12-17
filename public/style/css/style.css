@@ -211,6 +211,30 @@
   margin-bottom: 2em;
 }
 
+.OverzichtSectionForm {
+  margin: auto;
+}
+.OverzichtSectionForm h2 {
+  width: 100%;
+  text-align: center;
+}
+.OverzichtSectionForm form {
+  margin: auto;
+  width: 80%;
+}
+.OverzichtSectionForm form button {
+  margin: 1em;
+  text-decoration: none;
+  color: white;
+  background-color: #5F1A37;
+  width: 12em;
+  height: 3em;
+  text-align: center;
+  padding: 0.7em;
+  border-style: none;
+  border-radius: 0;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

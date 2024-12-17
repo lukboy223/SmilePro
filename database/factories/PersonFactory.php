@@ -20,8 +20,9 @@ class PersonFactory extends Factory
     public function definition(): array
     {
         return [
+            'UserId' => \App\Models\User::factory(),
             'FirstName' => $this->faker->firstName,
-            'MiddleName' => $this->faker->optional()->firstName,
+            'MiddleName' => $this->faker->optional()->firstName(10),
             'LastName' => $this->faker->lastName,
             'DateOfBirth' => $this->faker->date
         ];

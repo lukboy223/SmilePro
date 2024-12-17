@@ -4,13 +4,13 @@
     <x-slot:title>
         Overview employees
     </x-slot:title>
-    <h1 class="MederwerkerOverzichtTitel">Medewerker overzicht</h1>
+    <h1 class="OverzichtTitel">Medewerker overzicht</h1>
     <div class="HomeLine"></div>
 
     <section>
 
-        <table class="MedewerkerOverzichtTable">
-            <tr class="MedewerkerOverzichtTableHeader">
+        <table class="OverzichtTable">
+            <tr class="OverzichtTableHeader">
 
                 <th>
                     Medewerker ID
@@ -27,6 +27,7 @@
                 <th>
                     Naam
                 </th>
+
             </tr>
             @if($employees->isEmpty())
             <tr>
@@ -35,6 +36,7 @@
                 </td>
             </tr>
             @else
+
             @foreach($employees as $employee)
             <tr>
                 <td>
@@ -61,8 +63,8 @@
         <div>
             {{$employees->links()}}
         </div>
-        <div class="overviewMederwerkersButtons">
-            <a href="">Medewerker toevoegen</a>
+        <div class="overviewButtons">
+            <a href="{{ route('employee.create')}}">Medewerker toevoegen</a>
             <a href="{{ route('dashboard') }}">Back to dashboard</a>
         </div>
     </section>

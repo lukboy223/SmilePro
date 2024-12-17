@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('Number', length:50)->unique();
             $table->string('EmployeeType', length:255);
             $table->string('Specialization', length:255);
-            $table->text('Availability');
             $table->boolean('IsActive')->default(true);
             $table->string('note', length:255)->nullable()->default(null);
             $table->timestamps();

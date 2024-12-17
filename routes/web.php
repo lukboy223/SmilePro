@@ -20,6 +20,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/EmployeeView', [employeeController::class, 'index'])->name('employee.index');
+Route::get('/EmployeeCreate', [employeeController::class, 'create'])->name('employee.create');
+Route::post('/EmployeeStore', [employeeController::class, 'store'])->name('employee.store');
 
 Route::get('/TreatmentView', [TreatmentController::class, 'index'])->name('treatment.index');
 
