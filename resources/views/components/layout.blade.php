@@ -75,7 +75,11 @@
             <a href="{{ route('login') }}">Log in</a> | <a href="{{ route('register') }}">Sign up</a>
             @endguest
             @auth
+            @if(Auth::user()->role_id == '3')
+            <a href="{{ route('admin')}}" style="text-decoration: underline">dashboard admin</a>
+            @else
             <a href="{{ route('dashboard')}}" style="text-decoration: underline">dashboard</a>
+            @endif
             @endauth
         </div>
     </header>
