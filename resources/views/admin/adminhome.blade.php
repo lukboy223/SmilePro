@@ -10,7 +10,8 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     {{ __("You're logged in!") }}
-                    {{ __("as a admin") }}
+                    {{ __("as a admin") }} <br> <br>
+                    <a href="{{route('user.index')}}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded mx-4">Gebruikers overzicht</a>
                 </div>
             </div>
         </div>

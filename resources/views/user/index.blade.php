@@ -3,7 +3,7 @@
     <x-slot:title>
         User Overview
     </x-slot:title>
-    <section class="bg-gray-100 text-white-800">
+    <section class="text-white-800">
         <div class="container mx-auto py-8">
             <h1 class="text-3xl font-bold">User Overview</h1>
             <p class="text-gray-600">This is an overview of all users.</p>
@@ -51,7 +51,7 @@
                 </table>
                 {{ $users->links() }}
                 <div class="w-4/5 mx-auto flex justify-end mt-6">
-                    <a href="/" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded">
+                    <a href="{{ route('admin')}}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded">
                         Dashboard
                     </a>
                 </div>
