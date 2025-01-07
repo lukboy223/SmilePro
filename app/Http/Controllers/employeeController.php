@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 use App\Http\Controllers\Controller;
-
+use App\Models\Employee;
+use App\Models\User;
+use Illuminate\Validation\Rules;
 
 class employeeController extends Controller
 {
@@ -30,23 +32,28 @@ class employeeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'Username' => 'required',
-            'Password' => 'required',
-            'Number' => 'required | max:50', 
-            'EmployeeType' => 'required ',
-            'Specialization' => 'required | max:255',
-            'FirstName' => 'required | max:50',
-            'middleName' => 'nullable | max:10',
-            'LastName' => 'required | max:50',
+            'Email'             => 'required | email   | max:255 | lowercase | unique:'.User::class,
+            'Username'          => 'required | string  | max:255',
+            'Password'          => 'required | string  | max:255 | min:8', Rules\Password::defaults(),
+            'DateOfBirth'       => 'required | date',
+            'Number'            => 'required | max:50 | unique:'.Employee::class, 
+            'EmployeeType'      => 'required',
+            'Specialization'    => 'required | max:255',
+            'FirstName'         => 'required | string  | max:50',
+            'MiddleName'        => 'nullable | string  | max:10',
+            'LastName'          => 'required | string  | max:50',
         ]);
-
+        // dd($request->all());
+        
         $userId = DB::table('users')->insertGetId([
-            'Username' => $request->Username,
-            'Password' => $request->Password,
+            'Email'     => $request->Email,
+            'Name'  => $request->Username,
+            'Password'  => $request->Password,
         ]);
-
+        
         $personId = DB::table('person')->insertGetId([
             'UserId' => $userId,
+            'DateOfBirth' => $request->DateOfBirth,
             'FirstName' => $request->FirstName,
             'middleName' => $request->middleName,
             'LastName' => $request->LastName,
@@ -58,5 +65,6 @@ class employeeController extends Controller
             'Specialization' => $request->Specialization,
         ]);
 
+        return redirect()->route('employee.index')->with('success', 'Medewerker is succesvol toegevoegd');
     }
 }

@@ -4,6 +4,11 @@
     <x-slot:title>
         Overview employees
     </x-slot:title>
+    @if (session('success'))
+            <div class="alert alert-success w-10/12 m-auto text-center">
+                {{ session('success') }}
+            </div>
+        @endif
     <h1 class="OverzichtTitel">Medewerker overzicht</h1>
     <div class="HomeLine"></div>
 
