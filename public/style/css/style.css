@@ -211,6 +211,21 @@
   margin-bottom: 2em;
 }
 
+.EditButton {
+  background-color: #5F1A37;
+}
+.EditButton:hover {
+  background-color: #721B43;
+}
+
+.deleteButton {
+  background-color: #bc0101;
+  transition: 0.5s background-color;
+}
+.deleteButton:hover {
+  background-color: #5F1A37;
+}
+
 .OverzichtSectionForm {
   margin: auto;
 }

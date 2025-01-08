@@ -19,10 +19,17 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/EmployeeView', [employeeController::class, 'index'])->name('employee.index');
-Route::get('/EmployeeCreate', [employeeController::class, 'create'])->name('employee.create');
-Route::post('/EmployeeStore', [employeeController::class, 'store'])->name('employee.store');
+Route::get('/Employee/View', [employeeController::class, 'index'])->name('employee.index');
+
+Route::get('/Employee/Create', [employeeController::class, 'create'])->name('employee.create');
+Route::post('/Employee/Store', [employeeController::class, 'store'])->name('employee.store');
+
+Route::get('/Employee/Edit/{id}', [employeeController::class, 'edit'])->name('employee.edit');
+Route::patch('/Employee/Update/{id}', [employeeController::class, 'update'])->name('employee.update');
+
+Route::delete('/Employee/Destroy/{id}', [employeeController::class, 'destroy'])->name('employee.destroy');
+
 
 Route::get('/TreatmentView', [TreatmentController::class, 'index'])->name('treatment.index');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
