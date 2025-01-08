@@ -2,17 +2,14 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AvailabilityController;
-use App\Http\Controllers\CommunicationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/availability', [AvailabilityController::class, 'index'])->name('availability.index');
-
-Route::get('/communication', [CommunicationController::class, 'index'])->name('communication.index');
-
+// availability routes
+Route::get('/availabilities', [AvailabilityController::class, 'index'])->name('availability.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

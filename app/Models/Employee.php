@@ -9,4 +9,12 @@ class Employee extends Model
 {
     /** @use HasFactory<\Database\Factories\EmployeeFactory> */
     use HasFactory;
+
+    // has many availability
+
+    public function availabilities(): HasMany
+    {
+        return $this->hasMany(Availability::class, 'EmployeeId');
+    }
+
 }

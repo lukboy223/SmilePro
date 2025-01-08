@@ -12,18 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('availabilities', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(\App\Models\Employee::class, 'EmployeeId')  // Foreign key reference to Employee
-            ->constrained()  // Automatically references the 'employees' table and 'id' column
-            ->cascadeOnDelete();  // Deletes associated rows in availabilities if the Employee is deleted
-            $table->date('FormDate');
-            $table->date('ToDate');
-            $table->time('FormTime');
-            $table->time('ToTime');
-            $table->enum('Status', ['Present', 'Absent', 'Leave', 'Sick']); // Enum column
-            $table->boolean('IsActive');
-            $table->text('Note');
-            $table->timestamps();
+            $table->id(); // Unieke ID voor elke beschikbaarheid
+            $table->unsignedBigInteger('EmployeeId'); // Verwijzing naar de werknemer (foreign key)
+            $table->date('FormDate'); // Datum van de start van de beschikbaarheid
+            $table->date('ToDate'); // Datum van het einde van de beschikbaarheid
+            $table->time('FormTime'); // Tijdstip van de start van de beschikbaarheid
+            $table->time('ToTime'); // Tijdstip van het einde van de beschikbaarheid
+            $table->string('Status'); // Status van beschikbaarheid (bijv. Available/Unavailable)
+            $table->boolean('IsActive')->nullable();// Actief veld (true = actief, false = inactief)
+            $table->text('Note')->nullable(); // Eventuele opmerkingen, kan leeg zijn
+            $table->timestamps(); // Creëert `created_at` en `updated_at` kolommen
         });
     }
 
