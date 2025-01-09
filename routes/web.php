@@ -8,8 +8,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// availability routes
+// availability routes (index)
 Route::get('/availabilities', [AvailabilityController::class, 'index'])->name('availability.index');
+// Beschikbaarheid toevoegen
+Route::get('/availabilities/create', [AvailabilityController::class, 'create'])->name('availability.create');
+Route::post('/availabilities', [AvailabilityController::class, 'store'])->name('availability.store');
+
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

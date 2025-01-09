@@ -19,6 +19,13 @@
 
         <!-- Tabel met alle beschikbaarheden -->
         <div class="overflow-x-auto mx-auto max-w-6xl">
+        <!-- Link om een nieuwe beschikbaarheid te creëren -->
+        <div class="justify-end mb-4">
+            <a href="{{ route('availability.create') }}" 
+               class="bg-[#5F1A37] text-white px-6 py-2 rounded shadow-md transition hover:bg-[#7a284d]">
+                Create Availability
+            </a>
+        </div>
             <table class="table-auto w-full bg-white border-collapse border border-gray-200 shadow-md">
                 <thead style="background-color: #5F1A37;" class="text-white">
                     <tr>

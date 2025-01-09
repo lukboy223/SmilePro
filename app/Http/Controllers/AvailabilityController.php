@@ -12,4 +12,25 @@ class AvailabilityController extends Controller
         $availabilities = Availability::simplePaginate(25); // Haal de data op met paginatie
         return view('availabilities.index', ['availabilities' => $availabilities]);
     }
+
+    public function create()
+    {
+        return view('availabilities.create');
+    }
+
+    public function store(Request $request)
+    {
+        $data = $request->validate([
+            'EmployeeId' => 'required|integer',
+            'FormDate' => 'required|date',
+            'ToDate' => 'required|date|after_or_equal:FormDate',
+            'FormTime' => 'required|date_format:H:i',
+            'ToTime' => 'required|date_format:H:i|after:FormTime',
+            'Status' => 'required|string',
+        ]);
+
+        Availability::create($data);
+
+        return redirect(route('availability.index'))->with('success', 'Availability created successfully');
+    }
 }
