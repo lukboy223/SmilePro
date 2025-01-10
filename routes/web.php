@@ -13,7 +13,10 @@ Route::get('/availabilities', [AvailabilityController::class, 'index'])->name('a
 // Beschikbaarheid toevoegen
 Route::get('/availabilities/create', [AvailabilityController::class, 'create'])->name('availability.create');
 Route::post('/availabilities', [AvailabilityController::class, 'store'])->name('availability.store');
-
+// Beschikbaarheid bewerken
+Route::get('/availabilities/{availability}/edit', [AvailabilityController::class, 'edit'])->name('availability.edit');
+Route::put('/availabilities/{availability}/update', [AvailabilityController::class, 'update'])->name('availability.update');
+// Beschikbaarheid verwijderen
 
 
 

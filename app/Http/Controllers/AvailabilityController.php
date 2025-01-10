@@ -33,4 +33,26 @@ class AvailabilityController extends Controller
 
         return redirect(route('availability.index'))->with('success', 'Availability created successfully');
     }
+
+    public function edit(Availability $availability)
+    {
+        return view('availabilities.edit', ['availability' => $availability]);
+    }
+
+    public function update(Availability $availability, Request $request)
+    {
+        $data = $request->validate([
+            'EmployeeId' => 'required|integer',
+            'FormDate' => 'required|date',
+            'ToDate' => 'required|date|after_or_equal:FormDate',
+            'FormTime' => 'required|date_format:H:i',
+            'ToTime' => 'required|date_format:H:i|after:FormTime',
+            'Status' => 'required|string',
+        ]);
+
+        $availability->update($data);
+
+        return redirect(route('availability.index'))->with('success', 'Availability updated successfully');
+    }
+
 }

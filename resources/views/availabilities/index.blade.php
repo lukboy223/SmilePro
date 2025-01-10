@@ -49,7 +49,7 @@
                             <td class="px-4 py-2 border border-gray-300">{{ $availability->ToTime }}</td>
                             <td class="px-4 py-2 border border-gray-300">{{ $availability->Status }}</td>
                             <td class="px-4 py-2 border border-gray-300">
-                                <a href="{{ route('availability.index', ['availability' => $availability]) }}" 
+                                <a href="{{ route('availability.edit', ['availability' => $availability]) }}" 
                                    class="text-[#5F1A37] font-semibold hover:underline">
                                     Edit
                                 </a>
