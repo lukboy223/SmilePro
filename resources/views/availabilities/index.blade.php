@@ -55,7 +55,7 @@
                                 </a>
                             </td>
                             <td class="px-4 py-2 border border-gray-300">
-                                <form method="POST" action="{{ route('availability.index', ['availability' => $availability]) }}">
+                                <form method="POST" action="{{ route('availability.destroy', ['availability' => $availability]) }}">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" 

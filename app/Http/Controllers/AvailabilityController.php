@@ -55,4 +55,9 @@ class AvailabilityController extends Controller
         return redirect(route('availability.index'))->with('success', 'Availability updated successfully');
     }
 
+    public function destroy(Availability $availability)
+    {
+        $availability->delete();
+        return redirect(route('availability.index'))->with('success', 'Availability deleted successfully');
+    }
 }

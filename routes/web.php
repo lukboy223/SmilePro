@@ -17,6 +17,7 @@ Route::post('/availabilities', [AvailabilityController::class, 'store'])->name('
 Route::get('/availabilities/{availability}/edit', [AvailabilityController::class, 'edit'])->name('availability.edit');
 Route::put('/availabilities/{availability}/update', [AvailabilityController::class, 'update'])->name('availability.update');
 // Beschikbaarheid verwijderen
+Route::delete('/availabilities/{availability}/destroy', [AvailabilityController::class, 'destroy'])->name('availability.destroy');
 
 
 
