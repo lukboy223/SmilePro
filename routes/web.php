@@ -35,6 +35,9 @@ Route::get('/Invoice', [InvoiceController::class, 'index'])->name('invoice.index
 Route::get('/Invoice/Create', [InvoiceController::class, 'create'])->name('invoice.create');
 Route::post('/Invoice/Store', [InvoiceController::class, 'store'])->name('invoice.store');
 
+Route::delete('/Invoice/Destroy/{id}', [InvoiceController::class, 'destroy'])->name('invoice.destroy');
+
+
 
 Route::get('/TreatmentView', [TreatmentController::class, 'index'])->name('treatment.index');
 

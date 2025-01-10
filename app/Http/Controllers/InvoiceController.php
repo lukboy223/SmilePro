@@ -86,6 +86,8 @@ class InvoiceController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Invoice::destroy($id);
+
+        return redirect()->route('invoice.index')->with('success', 'Factuur succesvol geannuleerd.');
     }
 }

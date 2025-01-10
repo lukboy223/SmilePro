@@ -22,6 +22,7 @@
                             <th class="px-4 py-1 border border-gray-300 whitespace-nowrap">Date</th>
                             <th class="px-4 py-1 border border-gray-300 whitespace-nowrap">Total Amount</th>
                             <th class="px-4 py-1 border border-gray-300 whitespace-nowrap">Status</th>
+                            <th class="px-4 py-1 border border-gray-300 whitespace-nowrap">Annuleren</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,6 +42,14 @@
                             <td class="px-2 py-1 border border-gray-300">{{ $invoice->Date }}</td>
                             <td class="px-2 py-1 border border-gray-300">{{ $invoice->Amount }}</td>
                             <td class="px-2 py-1 border border-gray-300">{{ $invoice->Status }}</td>
+                            <td class="px-4 py-2 border border-gray-300">
+                    <form action="{{ route('invoice.destroy', $invoice->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit"
+                            class="deleteButton text-white font-bold py-2 px-4 rounded">Annuleren</button>
+                    </form>
+                </td>
                         </tr>
                         @endforeach
                         @endif
