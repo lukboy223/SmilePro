@@ -11,27 +11,54 @@
      <?php $__env->slot('title', null, []); ?> 
         Edit User
      <?php $__env->endSlot(); ?>
-    <section class="bg-gray-100 text-white-800">
-    <h1 class="text-3xl font-bold">Edit User</h1>
-    <form action="<?php echo e(route('user.update', $user->id)); ?>" method="POST">
+    <section class="OverzichtSectionForm">
+    <h2 class="text-3xl font-bold">Edit User</h2>
+    <form class="" action="<?php echo e(route('user.update', $user->id)); ?>" method="POST">
         <?php echo csrf_field(); ?>
         <?php echo method_field('PATCH'); ?>
-        <div class="mb-4">
             <label for="name">Name:</label>
-            <input type="text" id="name" name="name" value="<?php echo e($user->name); ?>" required>
-        </div>
-        <div class="mb-4">
+            <input type="text" id="name" name="name" value="<?php echo e($user->name); ?>" required class="form-control">
+            <?php $__errorArgs = ['name'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                <p class="text-red-500"><?php echo e($message); ?></p>
+            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="<?php echo e($user->email); ?>" required>
-        </div>
-        <div class="mb-4">
+            <input type="email" id="email" name="email" value="<?php echo e($user->email); ?>" required  class="form-control">
+            <?php $__errorArgs = ['email'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                <p class="text-red-500"><?php echo e($message); ?></p>
+            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-            <small>Leave blank to keep the current password</small>
-        </div>
-        <button class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded" type="submit">Update User</button>
+            <input type="password" id="password" name="password"  class="form-control" placeholder="Leave blank to keep the current password">
+            <?php $__errorArgs = ['password'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+                <p class="text-red-500"><?php echo e($message); ?></p>
+            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+
+        <button class="bg-[#5F1A37] hover:bg-[#721B43] text-white py-2 px-4 rounded" type="submit">Account bijwerken</button>
     </form>
-    <a href="<?php echo e(route('user.index')); ?>" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded mx-4">Back to User List</a>
+    <div class="overviewButtons">
+        <a href="<?php echo e(route('user.index')); ?>" >Back to User List</a>
+
+    </div>
 </section>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>
