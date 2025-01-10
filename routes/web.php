@@ -20,7 +20,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/Employee/View', [employeeController::class, 'index'])->name('employee.index');
+Route::get('/Employee', [employeeController::class, 'index'])->name('employee.index');
 
 Route::get('/Employee/Create', [employeeController::class, 'create'])->name('employee.create');
 Route::post('/Employee/Store', [employeeController::class, 'store'])->name('employee.store');
