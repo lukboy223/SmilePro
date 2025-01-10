@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\employee;
+use App\Models\Invoice;
 use App\Models\Person;
 use App\Models\Treatment;
 use App\Models\User;
@@ -18,6 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         Employee::factory()->count(100)->create();
         Treatment::factory()->count(100)->create();
+        Invoice::factory()->count(100)->create();
 
         // User::factory()->create([
         //     'name' => 'Test User',

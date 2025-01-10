@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('Number', length:10);
             $table->date('Date');
             $table->decimal('Amount', total:6, places:2);
-            $table->string('Status', length:255);
+            $table->string('Status', length:255)->default('Pending');
             $table->string('Note', length:255)->nullable()->default(null);
             $table->boolean('IsActive')->default(true);
             $table->timestamps();

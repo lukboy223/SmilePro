@@ -3,6 +3,7 @@
 use App\Http\Controllers\employeeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TreatmentController;
+use App\Http\Controllers\InvoiceController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -28,6 +29,11 @@ Route::get('/Employee/Edit/{id}', [employeeController::class, 'edit'])->name('em
 Route::patch('/Employee/Update/{id}', [employeeController::class, 'update'])->name('employee.update');
 
 Route::delete('/Employee/Destroy/{id}', [employeeController::class, 'destroy'])->name('employee.destroy');
+
+Route::get('/Invoice', [InvoiceController::class, 'index'])->name('invoice.index');
+
+Route::get('/Invoice/Create', [InvoiceController::class, 'create'])->name('invoice.create');
+Route::post('/Invoice/Store', [InvoiceController::class, 'store'])->name('invoice.store');
 
 
 Route::get('/TreatmentView', [TreatmentController::class, 'index'])->name('treatment.index');
