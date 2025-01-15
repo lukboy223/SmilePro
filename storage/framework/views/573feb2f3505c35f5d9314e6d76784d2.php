@@ -57,8 +57,9 @@ unset($__errorArgs, $__bag); ?>
     </form>
     <div class="overviewButtons">
         <a href="<?php echo e(route('user.index')); ?>" >Back to User List</a>
-
+        <a href="<?php echo e(route('user.index')); ?>" >Back to Dashboard</a>
     </div>
+
 </section>
  <?php echo $__env->renderComponent(); ?>
 <?php endif; ?>

@@ -26,4 +26,5 @@
         </span>
         <?php endif; ?>
     </nav>
-<?php endif; ?><?php /**PATH C:\Users\moham\Herd\smilepro\resources\views/vendor/pagination/simple-tailwind.blade.php ENDPATH**/ ?>
+<?php endif; ?>
+<?php /**PATH C:\Users\moham\Herd\smilepro\resources\views/vendor/pagination/simple-tailwind.blade.php ENDPATH**/ ?>

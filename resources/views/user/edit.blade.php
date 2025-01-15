@@ -27,7 +27,8 @@
     </form>
     <div class="overviewButtons">
         <a href="{{ route('user.index') }}" >Back to User List</a>
-
+        <a href="{{ route('user.index') }}" >Back to Dashboard</a>
     </div>
+
 </section>
 </x-layout>
