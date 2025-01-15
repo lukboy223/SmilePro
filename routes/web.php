@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\employeeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -31,6 +32,8 @@ Route::get('/admin', function () {
     return view('admin.adminhome');
 })->middleware(['auth', 'verified', CheckAdmin::class])->name('admin');
 
+Route::get('/EmployeeView', [employeeController::class, 'index'])->middleware(['auth', 'verified'])->name('employee.index');
+
 
 Route::get('/user/index', [UserController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.index');
 Route::get('/user/edit/{id}', [UserController::class, 'edit'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.edit');
@@ -40,3 +43,5 @@ Route::delete('/user/destroy/{id}', [UserController::class, 'destroy'])->middlew
 require __DIR__ . '/auth.php';
 
 // route::get('/adminpage', [HomeController::class, 'page']);
+
+
