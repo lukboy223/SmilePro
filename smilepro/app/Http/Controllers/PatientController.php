@@ -3,7 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Person;
 use App\Models\Patient;
+
+use DB;
+
 
 class PatientController extends Controller
 {
@@ -12,15 +16,26 @@ class PatientController extends Controller
      */
     public function index()
     {
-        // 
+        $persons = DB::table('patients')
+            ->join('persons', 'patients.PersonId', '=', 'persons.Id')
+            ->select('patients.*', 'persons.*')
+            ->simplePaginate(10); // Paginate data
+        return view('patients.index', [
+            'persons' => $persons,
+        ]); // Ensure the view path is correct
     }
+
+    // Other methods...
 
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return view('patients.create'); // Ensure the view path is correct 
+
+
+
     }
 
     /**
@@ -28,9 +43,17 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'person_id' => 'required|exists:persons,id',
+            'number' => 'required|string|max:10',
+            'birth_date' => 'required|date',
+            'medical_record' => 'required|string|max:255',
+        ]);
 
+        Person::create($request->all());
+
+        return redirect()->route('patients.index')->with('success', 'Patient created successfully.');
+    }
     /**
      * Display the specified resource.
      */

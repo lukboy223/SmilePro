@@ -23,8 +23,6 @@ class PersonFactory extends Factory
             'BirthDate' => $this->faker->date,
             'IsActive' => $this->faker->boolean,
             'Note' => $this->faker->optional()->sentence,
-            'created_at' => now(),
-            'updated_at' => now(), //check databse
         ];
     }
 }

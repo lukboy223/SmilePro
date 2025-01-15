@@ -23,8 +23,6 @@ class PatientFactory extends Factory
             'MedicalRecord' => $this->faker->text,
             'IsActive' => $this->faker->boolean,
             'Note' => $this->faker->sentence,
-            'created_at' => now(),
-            'updated_at' => now(),
         ];
     }
 }
