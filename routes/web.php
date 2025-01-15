@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\employeeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TreatmentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Middleware\CheckAdmin;
@@ -32,16 +33,13 @@ Route::get('/admin', function () {
     return view('admin.adminhome');
 })->middleware(['auth', 'verified', CheckAdmin::class])->name('admin');
 
-Route::get('/EmployeeView', [employeeController::class, 'index'])->middleware(['auth', 'verified'])->name('employee.index');
+Route::get('/EmployeeView', [employeeController::class, 'index'])->name('employee.index');
 
+Route::get('/TreatmentView', [TreatmentController::class, 'index'])->name('treatment.index');
 
 Route::get('/user/index', [UserController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.index');
 Route::get('/user/edit/{id}', [UserController::class, 'edit'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.edit');
 Route::patch('/user/update/{id}', [UserController::class, 'update'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.update');
 Route::delete('/user/destroy/{id}', [UserController::class, 'destroy'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.destroy');
 
-require __DIR__ . '/auth.php';
-
-// route::get('/adminpage', [HomeController::class, 'page']);
-
-
+require __DIR__.'/auth.php';

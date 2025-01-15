@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Role;
 use App\Models\employee;
+use App\Models\Person;
+use App\Models\Treatment;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -17,6 +19,7 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(100)->create();
         Employee::factory()->count(100)->create();
+        Treatment::factory()->count(100)->create();
 
         User::factory()->create([
             'name' => 'Test User',
