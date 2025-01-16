@@ -12,6 +12,7 @@
                     {{ __("You're logged in!") }}
                     {{ __("as a admin") }} <br> <br>
                     <a href="{{route('user.index')}}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded mx-4">Gebruikers overzicht</a>
+                    <a href="{{route('statistieken.index')}}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded mx-4">Statistieken overzicht</a>
                 </div>
             </div>
         </div>

@@ -6,7 +6,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Middleware\CheckAdmin;
 use Illuminate\Container\Attributes\Auth;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\StatiekController;
 
+Route::get('/statistieken/index', [StatiekController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('statistieken.index');
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -36,6 +38,13 @@ Route::get('/user/index', [UserController::class, 'index'])->middleware(['auth',
 Route::get('/user/edit/{id}', [UserController::class, 'edit'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.edit');
 Route::patch('/user/update/{id}', [UserController::class, 'update'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.update');
 Route::delete('/user/destroy/{id}', [UserController::class, 'destroy'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.destroy');
+
+
+
+    
+
+
+
 
 require __DIR__ . '/auth.php';
 
