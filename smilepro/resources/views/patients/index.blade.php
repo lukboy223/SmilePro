@@ -26,7 +26,8 @@
                     <tbody>
                         @if ($persons->isEmpty())
                             <tr>
-                                <td colspan="6" class="text-center px-2 py-1 border border-gray-300"> Er is een probleem opgetreden bij het ophalen van de Patienten. Probeer het later
+                                <td colspan="6" class="text-center px-2 py-1 border border-gray-300"> Er is een
+                                    probleem opgetreden bij het ophalen van de Patienten. Probeer het later
                                     opnieuw.</td>
                             </tr>
                         @else
@@ -44,16 +45,19 @@
                         @endif
                     </tbody>
                 </table>
-                <!-- Pagination Links for Persons -->
+
+                <button type="button" style="background-color: #5F1A37;"
+                    class="m-0 mt-3 mb-3 mr-3 text-white px-6 py-2 rounded font-semibold shadow-md transition"
+                    onclick="window.location.href='/patients/create'">
+                    patient toevoegen
+                </button>
                 
+                <!-- Pagination Links for Persons -->
+
                 <div class="mt-4">
                     {{ $persons->links() }}
                 </div>
-                <!-- Dashboard button -->
-                <div class="flex justify-end mt-4">
-                    <a href="/" style="background-color: #5F1A37;"
-                        class="text-white px-6 py-2 rounded font-semibold shadow-md transition">Dashboard</a>
-                </div>
+
             </div>
         </div>
     </div>

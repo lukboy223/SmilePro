@@ -45,6 +45,9 @@ class PatientController extends Controller
     {
         $request->validate([
             'person_id' => 'required|exists:persons,id',
+            'first_name' => 'required|string|max:255',
+            'middle_name' => 'required|string|max:255',
+            'last_name' => 'required|string|max:255',
             'number' => 'required|string|max:10',
             'birth_date' => 'required|date',
             'medical_record' => 'required|string|max:255',

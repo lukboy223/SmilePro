@@ -10,7 +10,7 @@ Route::get('/', function () {
 
 
 
-Route::get('/patients', [PatientController::class, 'index'])->name('persons.index');
+Route::get('/patients', [PatientController::class, 'index'])->name('patients.index');
 Route::get('/patients/create', [PatientController::class, 'create'])->name('patients.create');
 Route::post('/patients/store', [PatientController::class, 'store'])->name('patients.store');
 
