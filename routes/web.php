@@ -6,10 +6,16 @@ use App\Http\Controllers\HomeController;
 use App\Http\Middleware\CheckAdmin;
 use Illuminate\Container\Attributes\Auth;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FeedbackController;
 
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
+// feedbacks
+Route::get('/feedbacks', [FeedbackController::class, 'index'])->name('feedback.index');
+Route::post('/feedbacks', [FeedbackController::class, 'store'])->name('feedback.store');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
