@@ -8,13 +8,20 @@
 
         <!-- Bericht weergeven als een sessie een 'success'-bericht bevat -->
         @if(session()->has('success'))
-            <div class="bg-green-100 text-green-800 border border-green-200 p-4 rounded mb-4">
-                {{ session('success') }}
-            </div>
+        <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+            <span class="block sm:inline">{{ session('success') }}</span>
+        </div>
         @endif
 
-        <!-- Tabel met alle beschikbaarheden -->
+        <!-- Tabel met alle berichten -->
         <div class="overflow-x-auto mx-auto max-w-6xl">
+            <!-- Link om een nieuwe beschikbaarheid te creëren -->
+            <div class="justify-end mb-4">
+                <a href="{{ route('communications.create') }}" 
+                class="bg-[#5F1A37] text-white px-6 py-2 rounded shadow-md transition hover:bg-[#7a284d]">
+                    Maak een nieuwe bericht aan
+                </a>
+            </div>
             <table class="table-auto w-full bg-white border-collapse border border-gray-200 shadow-md">
                 <thead style="background-color: #5F1A37;" class="text-white">
                     <tr>
@@ -27,6 +34,11 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @if($communications->isEmpty())
+                        <tr>
+                            <td class="px-4 py-2 border border-gray-300 text-center bg-blue-100 align-middle h-16" colspan="6">Geen berichten gevonden</td>
+                        </tr>
+                    @else
                     @foreach($communications as $communication)
                         <tr class="text-center hover:bg-gray-50">
                             <td class="px-4 py-2 border border-gray-300">{{ $communication->PatientId }}</td>
@@ -51,6 +63,7 @@
                             </td>
                         </tr>
                     @endforeach
+                    @endif
                 </tbody>
             </table>
                 <!-- Knop naar dashboard -->

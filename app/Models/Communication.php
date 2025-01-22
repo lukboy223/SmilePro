@@ -17,4 +17,14 @@ class Communication extends Model
         'Message',
         'SentDate',
     ];
+
+    public function patient()
+    {
+        return $this->belongsTo(Patient::class, 'PatientId');
+    }
+
+    public function employee()
+    {
+        return $this->belongsTo(Employee::class, 'EmployeeId');
+    }
 }
