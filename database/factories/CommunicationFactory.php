@@ -23,5 +23,6 @@ class CommunicationFactory extends Factory
             'Message' => $this->faker->text(),
             'SentDate' => $this->faker->dateTime(),
         ];
+        
     }
 }
