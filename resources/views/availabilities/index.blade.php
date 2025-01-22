@@ -33,6 +33,11 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @if($availabilities->isEmpty())
+                        <tr>
+                            <td class="px-4 py-2 border border-gray-300 text-center bg-blue-100 align-middle h-16" colspan="8">Geen beschikbaarheden gevonden</td>
+                        </tr>
+                    @else
                     @foreach($availabilities as $availability)
                         <tr class="text-center hover:bg-gray-50">
                             <td class="px-4 py-2 border border-gray-300">{{ $availability->EmployeeId }}</td>
@@ -59,6 +64,7 @@
                             </td>
                         </tr>
                     @endforeach
+                    @endif
                 </tbody>
             </table>
                 <!-- Knop naar dashboard -->
