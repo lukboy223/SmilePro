@@ -7,6 +7,8 @@ use App\Http\Middleware\CheckAdmin;
 use Illuminate\Container\Attributes\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StatiekController;
+use App\Http\Middleware\CheckEmployee;
+use App\Http\Controllers\EmployeeController;
 
 Route::get('/statistieken/index', [StatiekController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('statistieken.index');
 Route::get('/', function () {
@@ -21,7 +23,7 @@ route::get('/about', function () {
     return view('about');
 });
 
- Route::get('/home', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/home', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -34,14 +36,21 @@ Route::get('/admin', function () {
 })->middleware(['auth', 'verified', CheckAdmin::class])->name('admin');
 
 
+
+Route::get('/employee', [EmployeeController::class, 'index'])->middleware(['auth', 'verified', CheckEmployee::class])->name('employee');
+
+
+
 Route::get('/user/index', [UserController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.index');
 Route::get('/user/edit/{id}', [UserController::class, 'edit'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.edit');
 Route::patch('/user/update/{id}', [UserController::class, 'update'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.update');
 Route::delete('/user/destroy/{id}', [UserController::class, 'destroy'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.destroy');
 
 
+Route::get('/user/index', [UserController::class, 'index'])->middleware(['auth', 'verified', CheckEmployee::class])->name('user.index');
 
-    
+
+
 
 
 
