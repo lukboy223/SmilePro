@@ -27,6 +27,11 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @if($communications->isEmpty())
+                        <tr>
+                            <td class="px-4 py-2 border border-gray-300 text-center bg-blue-100 align-middle h-16" colspan="6">Geen berichten gevonden.</td>
+                        </tr>
+                    @else
                     @foreach($communications as $communication)
                         <tr class="text-center hover:bg-gray-50">
                             <td class="px-4 py-2 border border-gray-300">{{ $communication->PatientId }}</td>
@@ -51,6 +56,7 @@
                             </td>
                         </tr>
                     @endforeach
+                    @endif
                 </tbody>
             </table>
                 <!-- Knop naar dashboard -->
