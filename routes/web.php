@@ -31,7 +31,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/admin', function () {
     return view('admin.adminhome');
-})->middleware(['auth', 'verified', CheckAdmin::class])->name('admin');
+})->middleware(['auth', 'verified', //CheckAdmin::class
+])->name('admin');
 
 Route::get('/EmployeeView', [employeeController::class, 'index'])->name('employee.index');
 

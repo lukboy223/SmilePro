@@ -45,7 +45,7 @@ class TreatmentController extends Controller
             'Time' => 'required|date_format:H:i:s',
             'treatmentType' => 'required|max:255',
             'description' => 'required|max:255',
-            'cost' => 'required|numeric|min:0|decimal:2',
+            'cost' => 'required|numeric|min:0|max:20000|decimal:2',
             'Status' => 'required|max:255',
         ]);
         
