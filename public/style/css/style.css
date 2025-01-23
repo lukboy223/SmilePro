@@ -138,6 +138,7 @@
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
 .Pagination {
   margin: auto;
   width: 80%;
@@ -200,6 +201,7 @@
   text-align: center;
   padding: 0.7em;
 }
+
 .OverzichtTable {
   width: 80%;
   margin: auto;
@@ -392,8 +394,77 @@ header .NavbarOpener div {
   background: black;
   content: " ";
   display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: expected "{".\a   \2577 \a 3 \2502  @use "user";\a   \2502             ^\a   \2575 \a   public\\style\\scss\\style.scss 3:12  root stylesheet';
+  height: 6px;
+  width: 60px;
+  border-radius: 3px;
+  margin: 7px 0;
+  transition: 0.5s;
 }
+
+footer .footerTopSection {
+  margin: 0;
+  width: 100%;
+  padding: 0;
+  background-color: #659B99;
+  justify-content: space-between;
+  color: white;
+  padding: 3em;
+}
+footer .footerTopSection .footerLine {
+  height: 100%;
+  width: 5px;
+  background-color: white;
+}
+footer .footerTopSection .footerNavbar ul {
+  padding: 0;
+}
+footer .footerTopSection .footerNavbar ul li {
+  display: flex;
+  list-style: none;
+  justify-content: end;
+  width: 100%;
+  margin-top: 1em;
+}
+footer .footerTopSection .footerNavbar ul li a {
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+footer .footerTopSection .footerContact ul {
+  padding: 0;
+}
+footer .footerTopSection .footerContact ul li {
+  list-style: none;
+  text-align: start;
+  width: 100%;
+  margin-top: 1em;
+  color: white;
+  font-size: 1.2em;
+  color: white;
+}
+footer .footerTopSection .footerContact ul li strong {
+  font-size: 1.3em;
+}
+footer .footerBottomSection {
+  background-color: #2C2C2C;
+  width: 100%;
+  color: #A5A5A5;
+  display: flex;
+  flex-direction: column;
+}
+footer .footerBottomSection a {
+  color: #A5A5A5;
+  width: 100%;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+footer .footerBottomSection p {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+/*# sourceMappingURL=style.css.map */

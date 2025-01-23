@@ -9,5 +9,10 @@ class Treatment extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+       'EmployeeId',
+       
+    ];
+
     protected $table = 'Treatment';
 }

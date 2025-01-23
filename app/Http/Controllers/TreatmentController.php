@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Treatment;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -24,5 +25,46 @@ class TreatmentController extends Controller
             'treatments' => $treatments
         ]);
 
+    }
+    public function edit(string $id)
+    {
+        $treatments = Treatment::findOrFail($id);
+        return view('Treatment.edit', ['treatments' => $treatments]);
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $treatments = Treatment::findOrFail($id);
+
+        
+
+        $validatedData = $request->validate([
+
+            'EmployeeId' => 'required|max:255',
+            'Date' => 'required|date',
+            'Time' => 'required|date_format:H:i:s',
+            'treatmentType' => 'required|max:255',
+            'description' => 'required|max:255',
+            'cost' => 'required|numeric|min:0|decimal:2',
+            'Status' => 'required|max:255',
+        ]);
+        
+
+        DB::table('treatment')->where('id', $id)->update($validatedData);
+
+
+            // $treatments->update([
+            //     'EmployeeId' => $request['EmployeeId'],
+            //     'Date' => $request['Date'],
+            //     'Time' => $request['Time'],
+            //     'treatmentType' => $request['treatmentType'],
+            //     'description' => $request['description'],
+            //     'cost' => $request['cost'],
+            //     'Status' => $request['Status'],
+            // ]);
+       
+    
+
+        return redirect()->route('treatment.index')->with('success', 'de afspraak is succesvol gewijzigd.');
     }
 }

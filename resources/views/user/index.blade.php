@@ -39,7 +39,7 @@
                             <td class="px-4 py-2 border border-gray-300">{{ $user->email }}</td>
                             <td class="px-4 py-2 border border-gray-300">
                                 <a href="{{ route('user.edit', $user->id) }}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded">
-                                    Edit
+                                    wijzigen 
                                 </a>
                             </td>
                             <td class="px-4 py-2 border border-gray-300">

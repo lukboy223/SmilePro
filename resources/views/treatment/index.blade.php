@@ -33,10 +33,13 @@
                 <th>
                     Behandeling kosten
                 </th>
+                <th>
+                    Behandeling wijzigen
+                </th>
             </tr>
             @if($treatments->isEmpty())
             <tr>
-                <td colspan="5" class="errorTableRow">
+                <td colspan="7" class="errorTableRow">
                     Er is een probleem opgetreden bij onze database, probeer het later opnieuw.
             </tr>
             @else
@@ -49,7 +52,8 @@
                     {{$treatment->patient_first_name}} {{$treatment->patient_middle_name}} {{$treatment->patient_last_name}}
                 </td>
                 <td>
-                    {{$treatment->Date}} - {{$treatment->Time}}
+                    {{$treatment->Date}}<br> 
+                    {{$treatment->Time}}
                 </td>
                 <td>
                     {{$treatment->treatmentType}}
@@ -62,6 +66,10 @@
                 </td>
                 <td>
                     {{$treatment->cost}}
+                </td>
+                <td>
+                    <a href="{{ route('treatment.edit', $treatment->id) }}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded"
+                    >Wijzigen</a>
                 </td>
             </tr>
             @endforeach
