@@ -71,6 +71,7 @@
                     <a href="{{ route('treatment.edit', $treatment->id) }}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded"
                     >Wijzigen</a>
                 </td>
+                
             </tr>
             @endforeach
             @endif
