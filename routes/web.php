@@ -6,6 +6,15 @@ use App\Http\Controllers\HomeController;
 use App\Http\Middleware\CheckAdmin;
 use Illuminate\Container\Attributes\Auth;
 use App\Http\Controllers\UserController;
+// use App\Mail\AppointmentPosted;
+
+
+// Route::get('test', function () {
+    // Illuminate\Support\Facades\Mail::to('339543@student.mboutrecht.nl')->send(
+    //   new App\Mail\AppointmentPosted()
+    // );
+    // return 'Done';
+// });
 
 Route::get('/', function () {
     return view('home');

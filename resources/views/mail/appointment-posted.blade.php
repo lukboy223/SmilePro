@@ -1,0 +1,1 @@
+Uw afspraak is succesvol geplaatst. U ontvangt een bevestiging per e-mail.
