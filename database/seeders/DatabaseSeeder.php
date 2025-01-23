@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         Role::factory()->create([
             'name' => 'Admin'
         ]);
-
+                                                                                
         Treatment::factory(100)->create();
     }
 }
