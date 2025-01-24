@@ -45,8 +45,8 @@ class AvailabilityController extends Controller
             'EmployeeId' => 'required|integer',
             'FormDate' => 'required|date',
             'ToDate' => 'required|date|after_or_equal:FormDate',
-            'FormTime' => 'required|date_format:H:i',
-            'ToTime' => 'required|date_format:H:i|after:FormTime',
+            'FormTime' => 'required|date_format:H:i:s',
+            'ToTime' => 'required|date_format:H:i:s|after:FormTime',
             'Status' => 'required|string',
         ]);
 

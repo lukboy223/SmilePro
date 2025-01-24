@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Availability;
 use App\Models\Role;
 use App\Models\employee;
 use App\Models\Person;
@@ -17,13 +18,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        Availability::factory(200)->create();
         User::factory(100)->create();
         Employee::factory()->count(100)->create();
         Treatment::factory()->count(100)->create();
 
         User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+            'name' => 'Admin',
+            'email' => 'Admin@mail.com',
+            'role_id' => 3,
+            'password' => bcrypt('cookie123'),
+            'email_verified_at' => now(),
         ]);
         
         Role::factory()->create([

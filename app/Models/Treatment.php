@@ -10,8 +10,15 @@ class Treatment extends Model
     use HasFactory;
 
     protected $fillable = [
-       'EmployeeId',
-       
+        'EmployeeId',
+        'PatientId',
+        'Date',
+        'Time',
+        'treatmentType',
+        'description',
+        'cost',
+        'Status',
+         
     ];
 
     protected $table = 'Treatment';

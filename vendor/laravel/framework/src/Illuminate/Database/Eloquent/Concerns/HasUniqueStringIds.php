@@ -105,18 +105,4 @@ trait HasUniqueStringIds
     {
         throw (new ModelNotFoundException)->setModel(get_class($this), $value);
     }
-
-    /**
-     * Throw an exception for the given invalid unique ID.
-     *
-     * @param  mixed  $value
-     * @param  string|null  $field
-     * @return never
-     *
-     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
-     */
-    protected function handleInvalidUniqueId($value, $field)
-    {
-        throw (new ModelNotFoundException)->setModel(get_class($this), $value);
-    }
 }

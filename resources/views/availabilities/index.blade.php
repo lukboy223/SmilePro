@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beschikbaarheid</title>
-    @vite('resources/css/app.css') <!-- Tailwind CSS -->
-</head>
-<body class="bg-gray-100 text-white-800">
+<x-layout>
+        {{-- gives the page a custom title, see line 8 from layout.blade.php --}}
+        <x-slot:title>
+            Overview beschikbaarheid
+        </x-slot:title>
     <div class="container mx-auto py-8">
         <h1 class="text-bordeaux text-2xl font-bold text-center mb-6">Beschikbaarheid</h1>
 
@@ -79,5 +75,4 @@
             </div>
     </div>
     </div>
-</body>
-</html>
+</x-layout>

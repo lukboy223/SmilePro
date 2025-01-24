@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Availability</title>
-    @vite('resources/css/app.css') <!-- Tailwind CSS -->
-</head>
-<body class="bg-gray-100 text-gray-900">
+<x-layout>
+    {{-- gives the page a custom title, see line 8 from layout.blade.php --}}
+    <x-slot:title>
+    Beschikbaarheid aanpassen
+    </x-slot:title>
 
     <!-- Centraal uitgelijnd formulier -->
     <div class="flex items-center justify-center min-h-screen">
@@ -84,6 +80,4 @@
             </form>
         </div>
     </div>
-
-</body>
-</html>
+</x-layout>
