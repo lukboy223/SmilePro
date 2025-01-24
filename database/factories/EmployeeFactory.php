@@ -24,7 +24,6 @@ class EmployeeFactory extends Factory
             'Number' => $this->faker->unique()->numerify('EMP###'),
             'Specialization' => $this->faker->text(20),
             'EmployeeType' => $this->faker->randomElement(['Dentist', 'Assistant', 'Management']),
-            'Availability' => $this->faker->text(100)
         ];
     }
 }

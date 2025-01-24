@@ -4,13 +4,18 @@
     <x-slot:title>
         Overview employees
     </x-slot:title>
-    <h1 class="MederwerkerOverzichtTitel">Medewerker overzicht</h1>
+    @if (session('success'))
+    <div class="alert alert-success w-10/12 m-auto text-center">
+        {{ session('success') }}
+    </div>
+    @endif
+    <h1 class="OverzichtTitel">Medewerker overzicht</h1>
     <div class="HomeLine"></div>
 
     <section>
 
-        <table class="MedewerkerOverzichtTable">
-            <tr class="MedewerkerOverzichtTableHeader">
+        <table class="OverzichtTable">
+            <tr class="OverzichtTableHeader">
 
                 <th>
                     Medewerker ID
@@ -27,6 +32,9 @@
                 <th>
                     Naam
                 </th>
+                <th class="px-4 py-2 border border-gray-300">Edit</th>
+                <th class="px-4 py-2 border border-gray-300">Delete</th>
+
             </tr>
             @if($employees->isEmpty())
             <tr>
@@ -35,6 +43,7 @@
                 </td>
             </tr>
             @else
+
             @foreach($employees as $employee)
             <tr>
                 <td>
@@ -52,6 +61,20 @@
                 <td>
                     {{$employee->FirstName}} {{$employee->middleName}} {{$employee->LastName}}
                 </td>
+                <td class="px-4 py-2 border border-gray-300">
+                    <a href="{{ route('employee.edit', $employee->id) }}"
+                        class="EditButton text-white font-bold py-2 px-4 rounded">
+                        Edit
+                    </a>
+                </td>
+                <td class="px-4 py-2 border border-gray-300">
+                    <form action="{{ route('employee.destroy', $employee->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit"
+                            class="deleteButton text-white font-bold py-2 px-4 rounded">Delete</button>
+                    </form>
+                </td>
             </tr>
             @endforeach
             @endif
@@ -61,8 +84,8 @@
         <div>
             {{$employees->links()}}
         </div>
-        <div class="overviewMederwerkersButtons">
-            <a href="">Medewerker toevoegen</a>
+        <div class="overviewButtons">
+            <a href="{{ route('employee.create')}}">Medewerker toevoegen</a>
             <a href="{{ route('dashboard') }}">Back to dashboard</a>
         </div>
     </section>
