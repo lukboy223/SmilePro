@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\DB;
 
 
 class UserController extends Controller
@@ -13,7 +14,12 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::simplepaginate(25);
+        $users = DB::table('users')
+        ->join('roles', 'users.role_id', '=', 'roles.id')
+        ->select('users.*', 'roles.name as role')
+        ->simplePaginate(25);
+
+        // $users = User::simplepaginate(25);
         return view('user.index', ['users' => $users]);
     }
 

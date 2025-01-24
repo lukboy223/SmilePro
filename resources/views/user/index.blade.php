@@ -29,7 +29,7 @@
                         @foreach ($users as $user)
                         <tr class="text-center hover:bg-gray-50">
                             <td class="px-4 py-2 border border-gray-300">{{ $user->id }}</td>
-                            <td class="px-4 py-2 border border-gray-300">{{ $user->role_id }}</td>
+                            <td class="px-4 py-2 border border-gray-300">{{ $user->role }}</td>
                             <td class="px-4 py-2 border border-gray-300">{{ $user->name }}</td>
                             <td class="px-4 py-2 border border-gray-300">{{ $user->email }}</td>
                             <td class="px-4 py-2 border border-gray-300">
@@ -41,7 +41,7 @@
                                 <form action="{{ route('user.destroy', $user->id) }}" method="POST" style="display:inline;">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="bg-[#5F1A37] hover:bg-red-800 text-white font-bold py-2 px-4 rounded">Delete</button>
+                                    <button type="submit" class="bg-red-600 hover:bg-red-900 text-white font-bold py-2 px-4 rounded">Delete</button>
                                 </form>
                             </td>
                         </tr>
