@@ -31,6 +31,149 @@ class ValidatedInput implements ValidatedData
     }
 
     /**
+     * Determine if the validated input has one or more keys.
+     *
+     * @param  string|array  $key
+     * @return bool
+     */
+    public function exists($key)
+    {
+        return $this->has($key);
+    }
+
+    /**
+     * Determine if the validated input has one or more keys.
+     *
+     * @param  mixed  $keys
+     * @return bool
+     */
+    public function has($keys)
+    {
+        $keys = is_array($keys) ? $keys : func_get_args();
+
+        foreach ($keys as $key) {
+            if (! Arr::has($this->all(), $key)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Determine if the validated input contains any of the given keys.
+     *
+     * @param  string|array  $keys
+     * @return bool
+     */
+    public function hasAny($keys)
+    {
+        $keys = is_array($keys) ? $keys : func_get_args();
+
+        $input = $this->all();
+
+        return Arr::hasAny($input, $keys);
+    }
+
+    /**
+     * Determine if the validated input is missing one or more keys.
+     *
+     * @param  mixed  $keys
+     * @return bool
+     */
+    public function missing($keys)
+    {
+        return ! $this->has($keys);
+    }
+
+    /**
+     * Apply the callback if the validated input is missing the given input item key.
+     *
+     * @param  string  $key
+     * @param  callable  $callback
+     * @param  callable|null  $default
+     * @return $this|mixed
+     */
+    public function whenMissing($key, callable $callback, ?callable $default = null)
+    {
+        if ($this->missing($key)) {
+            return $callback(data_get($this->all(), $key)) ?: $this;
+        }
+
+        if ($default) {
+            return $default();
+        }
+
+        return $this;
+    }
+
+    /**
+     * Retrieve input from the validated input as a Stringable instance.
+     *
+     * @param  string  $key
+     * @param  mixed  $default
+     * @return \Illuminate\Support\Stringable
+     */
+    public function str($key, $default = null)
+    {
+        return $this->string($key, $default);
+    }
+
+    /**
+     * Retrieve input from the validated input as a Stringable instance.
+     *
+     * @param  string  $key
+     * @param  mixed  $default
+     * @return \Illuminate\Support\Stringable
+     */
+    public function string($key, $default = null)
+    {
+        return Str::of($this->input($key, $default));
+    }
+
+    /**
+     * Get a subset containing the provided keys with values from the input data.
+     *
+     * @param  mixed  $keys
+     * @return array
+     */
+    public function only($keys)
+    {
+        $results = [];
+
+        $input = $this->all();
+
+        $placeholder = new stdClass;
+
+        foreach (is_array($keys) ? $keys : func_get_args() as $key) {
+            $value = data_get($input, $key, $placeholder);
+
+            if ($value !== $placeholder) {
+                Arr::set($results, $key, $value);
+            }
+        }
+
+        return $results;
+    }
+
+    /**
+     * Get all of the input except for a specified array of items.
+     *
+     * @param  mixed  $keys
+     * @return array
+     */
+    public function except($keys)
+    {
+        $keys = is_array($keys) ? $keys : func_get_args();
+
+        $results = $this->all();
+
+        Arr::forget($results, $keys);
+
+        return $results;
+    }
+
+    /**
      * Merge the validated input with the given array of additional data.
      *
      * @param  array  $items

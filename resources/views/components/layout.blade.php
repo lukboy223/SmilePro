@@ -76,9 +76,11 @@
             @endguest
             @auth
             @if(Auth::user()->role_id == '3')
-            <a href="{{ route('admin')}}" style="text-decoration: underline">dashboard admin</a>
+            <a href="{{ route('admin')}}" style="text-decoration: underline">Dashboard Admin</a>
+            @elseif(Auth::user()->role_id == '2')
+            <a href="{{ route('employee')}}" style="text-decoration: underline">Dashboard Employee</a>
             @else
-            <a href="{{ route('dashboard')}}" style="text-decoration: underline">dashboard</a>
+            <a href="{{ route('dashboard')}}" style="text-decoration: underline">Dashboard</a>
             @endif
             @endauth
         </div>
