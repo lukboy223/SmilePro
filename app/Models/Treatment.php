@@ -7,8 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Treatment extends Model
 {
-
     use HasFactory;
 
-    protected $table = 'treatment';
+    protected $fillable = [
+       'EmployeeId',
+       
+    ];
+
+    protected $table = 'Treatment';
 }

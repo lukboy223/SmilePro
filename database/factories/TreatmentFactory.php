@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Treatment>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
 class TreatmentFactory extends Factory
 {
@@ -17,9 +17,9 @@ class TreatmentFactory extends Factory
     public function definition(): array
     {
         return [
-            'PatientId' => $this->faker->randomNumber(),
-            'EmployeeId' => $this->faker->randomNumber(), 
-            'Date' => $this->faker->dateTimeBetween('2020-01-01', '2024-12-31')->format('Y-m-d'),
+            'PatientId' => \App\Models\Patient::factory(),
+            'EmployeeId' => \App\Models\Employee::factory(),
+            'Date' => $this->faker->date(),
             'Time' => $this->faker->time(),
             'treatmentType' => $this->faker->text(255),
             'description' => $this->faker->text(),

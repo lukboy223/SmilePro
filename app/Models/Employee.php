@@ -10,6 +10,8 @@ class Employee extends Model
     /** @use HasFactory<\Database\Factories\EmployeeFactory> */
     use HasFactory;
 
+    protected $table = 'employee';
+
     // has many availability
 
     public function availabilities(): HasMany

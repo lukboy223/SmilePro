@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Employee;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class EmployeeFactory extends Factory
 {
+    protected $model = Employee::class;
+
     /**
      * Define the model's default state.
      *
@@ -17,7 +20,11 @@ class EmployeeFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'PersonId' => \App\Models\Person::factory(),
+            'Number' => $this->faker->unique()->numerify('EMP###'),
+            'Specialization' => $this->faker->text(20),
+            'EmployeeType' => $this->faker->randomElement(['Dentist', 'Assistant', 'Management']),
+            'Availability' => $this->faker->text(100)
         ];
     }
 }

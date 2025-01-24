@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\employeeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TreatmentController;
 use App\Http\Controllers\AvailabilityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
@@ -9,7 +11,7 @@ use Illuminate\Container\Attributes\Auth;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\StatiekController;
 use App\Http\Middleware\CheckEmployee;
-use App\Http\Controllers\EmployeeController;
+
 
 
 // availability routes (index)
@@ -46,13 +48,17 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/admin', function () {
     return view('admin.adminhome');
-})->middleware(['auth', 'verified', CheckAdmin::class])->name('admin');
+})->middleware(['auth', 'verified', //CheckAdmin::class
+])->name('admin');
 
+Route::get('/EmployeeView', [employeeController::class, 'index'])->name('employee.index');
 
-
-Route::get('/employee', [EmployeeController::class, 'index'])->middleware(['auth', 'verified', CheckEmployee::class])->name('employee');
-
-
+Route::get('/treatment/index', [TreatmentController::class, 'index'])->name('treatment.index');
+Route::get('/treatment/create', [TreatmentController::class, 'create'])->name('treatment.create');
+Route::post('/treatment/store', [TreatmentController::class, 'store'])->name('treatment.store');
+Route::get('/treatment/edit/{id}', [TreatmentController::class, 'edit'])->name('treatment.edit');
+Route::patch('/treatment/update/{id}', [TreatmentController::class, 'update'])->name('treatment.update');
+Route::delete('/treatment/destroy/{id}', [TreatmentController::class, 'destroy'])->name('treatment.destroy');
 
 Route::get('/user/index', [UserController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.index');
 Route::get('/user/edit/{id}', [UserController::class, 'edit'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.edit');

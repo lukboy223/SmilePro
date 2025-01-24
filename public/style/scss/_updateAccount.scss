@@ -1,0 +1,45 @@
+.OverzichtSectionForm {
+    margin: auto;
+
+    h2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    form {
+        margin: auto;
+        width: 80%;
+
+        button {
+            margin: 1em;
+            text-decoration: none;
+            color: white;
+            background-color: #5F1A37;
+            width: 12em;
+            height: 3em;
+            text-align: center;
+            padding: 0.7em;
+            border-style: none;
+            border-radius: 0;
+
+        }
+    }
+
+.overviewButtons{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    a{
+        text-decoration: none;
+        color: white;
+        background-color: #5F1A37;
+        width: 12em;
+        height: 3em;
+        text-align: center;
+        padding: 0.7em;
+    }
+}
+}

@@ -161,6 +161,119 @@
   background-color: #E9E9E9;
 }
 
+.OverzichtSectionForm {
+  margin: auto;
+}
+.OverzichtSectionForm h2 {
+  width: 100%;
+  text-align: center;
+}
+.OverzichtSectionForm form {
+  margin: auto;
+  width: 80%;
+}
+.OverzichtSectionForm form button {
+  margin: 1em;
+  text-decoration: none;
+  color: white;
+  background-color: #5F1A37;
+  width: 12em;
+  height: 3em;
+  text-align: center;
+  padding: 0.7em;
+  border-style: none;
+  border-radius: 0;
+}
+.OverzichtSectionForm .overviewButtons {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.OverzichtSectionForm .overviewButtons a {
+  text-decoration: none;
+  color: white;
+  background-color: #5F1A37;
+  width: 12em;
+  height: 3em;
+  text-align: center;
+  padding: 0.7em;
+}
+
+.OverzichtTable {
+  width: 80%;
+  margin: auto;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+.OverzichtTable td {
+  border: solid 1px black;
+  padding: 0.5em;
+}
+.OverzichtTable .errorTableRow {
+  background-color: #8e0000;
+  color: white;
+  text-align: center;
+}
+
+.OverzichtTableHeader {
+  background-color: #5F1A37;
+  color: white;
+  border-left: 1px solid #5F1A37;
+}
+.OverzichtTableHeader th {
+  padding: 0.5em;
+}
+
+.Pagination {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.Pagination a, .Pagination span {
+  text-decoration: none;
+  color: black;
+  background-color: white;
+  border: solid 2px black;
+  width: 9em;
+  height: 3em;
+  text-align: center;
+  padding: 0.7em;
+}
+.Pagination span {
+  background-color: #E9E9E9;
+}
+
+.overviewButtons {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.overviewButtons a, .overviewButtons .Pagination span, .Pagination .overviewButtons span {
+  text-decoration: none;
+  color: white;
+  background-color: #5F1A37;
+  width: 12em;
+  height: 3em;
+  text-align: center;
+  padding: 0.7em;
+}
+
+.OverzichtTitel {
+  width: 100%;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

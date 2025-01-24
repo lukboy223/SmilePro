@@ -1,30 +1,69 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+<x-layout>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                    {{ __('as a employee') }} <br> <br>
-                    <a href="{{route('user.index')}}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded mx-4">Gebruikers overzicht</a>
-                    <a href="{{route('statistieken.index')}}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded mx-4">Statistieken overzicht</a>
-                </div>
-            </div>
+    {{-- gives the page a custom title, see line 8 from layout.blade.php --}}
+    <x-slot:title>
+        Overview employees
+    </x-slot:title>
+    <h1 class="MederwerkerOverzichtTitel">Medewerker overzicht</h1>
+    <div class="HomeLine"></div>
+
+    <section>
+
+        <table class="MedewerkerOverzichtTable">
+            <tr class="MedewerkerOverzichtTableHeader">
+
+                <th>
+                    Medewerker ID
+                </th>
+                <th>
+                    Functie
+                </th>
+                <th>
+                    Specialisatie
+                </th>
+                <th>
+                    Medewerker nummer
+                </th>
+                <th>
+                    Naam
+                </th>
+            </tr>
+            @if($employees->isEmpty())
+            <tr>
+                <td colspan="5" class="errorTableRow">
+                    Geen werknemers kunnen vinden, probeer het later opnieuw
+                </td>
+            </tr>
+            @else
+            @foreach($employees as $employee)
+            <tr>
+                <td>
+                    {{$employee->id}}
+                </td>
+                <td>
+                    {{$employee->EmployeeType}}
+                </td>
+                <td>
+                    {{$employee->Specialization}}
+                </td>
+                <td>
+                    {{$employee->Number}}
+                </td>
+                <td>
+                    {{$employee->FirstName}} {{$employee->middleName}} {{$employee->LastName}}
+                </td>
+            </tr>
+            @endforeach
+            @endif
+
+        </table>
+        {{-- pagination buttons --}}
+        <div>
+            {{$employees->links()}}
         </div>
-    </div>
-
-</x-app-layout>
-
-
-
-
-
-
-
-
-
+        <div class="overviewMederwerkersButtons">
+            <a href="">Medewerker toevoegen</a>
+            <a href="{{ route('dashboard') }}">Back to dashboard</a>
+        </div>
+    </section>
+</x-layout>
