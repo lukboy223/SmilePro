@@ -65,7 +65,7 @@ class TreatmentController extends Controller
 
             'EmployeeId' => 'required|max:255',
             'Date' => 'required|date',
-            'Time' => 'required|date_format:H:i:s',
+            'Time' => 'required|date_format:H:i',
             'treatmentType' => 'required|max:255',
             'description' => 'required|max:255',
             'cost' => 'required|numeric|min:0|max:20000|decimal:2',
