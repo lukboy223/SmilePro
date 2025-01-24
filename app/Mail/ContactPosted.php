@@ -9,7 +9,7 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class AppointmentPosted extends Mailable
+class ContactPosted extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -27,7 +27,7 @@ class AppointmentPosted extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Appointment Posted',
+            subject: 'Contact Posted',
             from: 'tand@arts.com'
         );
     }
@@ -38,8 +38,8 @@ class AppointmentPosted extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'mail.appointment-posted',
-            // markdown: 'mail.appointment-posted',
+            view: 'mail.Contact-posted',
+            // markdown: 'mail.Contact-posted',
         );
     }
 
