@@ -64,7 +64,7 @@
                 @enderror
             </div>
             <div class="mb-4">
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create</button>
+                <button type="submit" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded">afspraak aanmaken</button>
             </div>
         </form>
     </div>

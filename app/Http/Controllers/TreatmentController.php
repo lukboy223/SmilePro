@@ -34,8 +34,8 @@ class TreatmentController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'EmployeeId' => 'required|max:255',
-            'PatientId' => 'required|max:255',
+            'EmployeeId' => 'required',
+            'PatientId' => 'required',
             'Date' => 'required|date',
             'Time' => 'required|date_format:H:i',
             'treatmentType' => 'required|max:255',
@@ -47,6 +47,7 @@ class TreatmentController extends Controller
         Treatment::create($validatedData);
 
         return redirect()->route('treatment.index')->with('success', 'Treatment created successfully.');
+        
     }
     public function edit(string $id)
     {

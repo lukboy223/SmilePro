@@ -8,12 +8,7 @@
     <div class="HomeLine"></div>
 
     <section>
-    {{-- Create button --}}
-        <div class="mb-4">
-            <a href="{{ route('treatment.create') }}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded">
-                Create Treatment
-            </a>
-        </div>
+
 
         {{-- table with all the treatments --}}
         <table class="OverzichtTable">
@@ -98,8 +93,13 @@
             {{$treatments->links()}}
         </div>
         <div class="overviewButtons">
-            <a href="">Behandeling toevoegen</a>
-            <a href="{{ route('dashboard') }}">Back to dashboard</a>
+        {{-- Create button --}}
+        <div class="mb-4">
+            <a href="{{ route('treatment.create') }}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded">
+                Afspraak aanmaken
+            </a>
+        </div>
+        <a class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded" href="{{ route('dashboard') }}">Back to dashboard</a>   
         </div>
     </section>
     <div id="deleteModal" class="fixed z-10 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
