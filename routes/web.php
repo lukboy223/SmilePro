@@ -1,11 +1,24 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AvailabilityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Middleware\CheckAdmin;
 use Illuminate\Container\Attributes\Auth;
 use App\Http\Controllers\UserController;
+
+
+// availability routes (index)
+Route::get('/availabilities', [AvailabilityController::class, 'index'])->name('availability.index');
+// Beschikbaarheid toevoegen
+Route::get('/availabilities/create', [AvailabilityController::class, 'create'])->name('availability.create');
+Route::post('/availabilities', [AvailabilityController::class, 'store'])->name('availability.store');
+// Beschikbaarheid bewerken
+Route::get('/availabilities/{availability}/edit', [AvailabilityController::class, 'edit'])->name('availability.edit');
+Route::put('/availabilities/{availability}/update', [AvailabilityController::class, 'update'])->name('availability.update');
+// Beschikbaarheid verwijderen
+Route::delete('/availabilities/{availability}/destroy', [AvailabilityController::class, 'destroy'])->name('availability.destroy');
 
 Route::get('/', function () {
     return view('home');
@@ -38,5 +51,3 @@ Route::patch('/user/update/{id}', [UserController::class, 'update'])->middleware
 Route::delete('/user/destroy/{id}', [UserController::class, 'destroy'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.destroy');
 
 require __DIR__ . '/auth.php';
-
-// route::get('/adminpage', [HomeController::class, 'page']);
