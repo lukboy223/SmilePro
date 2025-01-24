@@ -37,8 +37,11 @@ Route::get('/admin', function () {
 Route::get('/EmployeeView', [employeeController::class, 'index'])->name('employee.index');
 
 Route::get('/treatment/index', [TreatmentController::class, 'index'])->name('treatment.index');
+Route::get('/treatment/create', [TreatmentController::class, 'create'])->name('treatment.create');
+Route::post('/treatment/store', [TreatmentController::class, 'store'])->name('treatment.store');
 Route::get('/treatment/edit/{id}', [TreatmentController::class, 'edit'])->name('treatment.edit');
 Route::patch('/treatment/update/{id}', [TreatmentController::class, 'update'])->name('treatment.update');
+Route::delete('/treatment/destroy/{id}', [TreatmentController::class, 'destroy'])->name('treatment.destroy');
 
 Route::get('/user/index', [UserController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.index');
 Route::get('/user/edit/{id}', [UserController::class, 'edit'])->middleware(['auth', 'verified', CheckAdmin::class])->name('user.edit');

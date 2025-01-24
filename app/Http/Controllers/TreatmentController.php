@@ -26,6 +26,28 @@ class TreatmentController extends Controller
         ]);
 
     }
+    public function create()
+    {
+        return view('treatment.create');
+    }
+
+    public function store(Request $request)
+    {
+        $validatedData = $request->validate([
+            'EmployeeId' => 'required|max:255',
+            'PatientId' => 'required|max:255',
+            'Date' => 'required|date',
+            'Time' => 'required|date_format:H:i',
+            'treatmentType' => 'required|max:255',
+            'description' => 'required|max:255',
+            'cost' => 'required|numeric|min:0|max:20000|decimal:2',
+            'Status' => 'required|max:255',
+        ]);
+
+        Treatment::create($validatedData);
+
+        return redirect()->route('treatment.index')->with('success', 'Treatment created successfully.');
+    }
     public function edit(string $id)
     {
         $treatments = Treatment::findOrFail($id);
@@ -66,5 +88,12 @@ class TreatmentController extends Controller
     
 
         return redirect()->route('treatment.index')->with('success', 'de afspraak is succesvol gewijzigd.');
+    }
+    public function destroy(string $id)
+    {
+        $treatments = Treatment::findOrFail($id);
+        $treatments->delete();
+
+        return redirect()->route('treatment.index')->with('success', 'afspraak succesvol geannuleerd.');
     }
 }
