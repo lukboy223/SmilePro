@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('role', function (Blueprint $table) {
             $table->id();
-            $foreignId = $table->foreignId('PersonId');
-            $foreignId->constrained('person');
             $table->string('Name', length:255);
             $table->string('note', length:255)->nullable()->default(null);
             $table->boolean('IsActive')->default(true);

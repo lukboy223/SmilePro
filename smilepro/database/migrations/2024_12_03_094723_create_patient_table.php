@@ -13,13 +13,16 @@ return new class extends Migration
     {
         Schema::create('patient', function (Blueprint $table) {
             $table->id();
-            $foreignId = $table->foreignId('PersonId');
-            $foreignId->constrained('person');
-            $table->string('Number', length:50)->unique();
+            $table->foreignId('PersonId')->constrained('person')->onDelete('cascade');
+            $table->string('Number', 50)->unique();
             $table->text('MedicalRecord');
-            $table->string('Note', length:255)->nullable()->default(null);
+            $table->string('Note', 255)->nullable()->default(null);
             $table->boolean('IsActive')->default(true);
             $table->timestamps();
+        });
+
+        Schema::table('person', function (Blueprint $table) {
+          
         });
     }
 
@@ -29,5 +32,8 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('patient');
+        Schema::table('person', function (Blueprint $table) {
+            $table->dropColumn('UserId');
+        });
     }
 };

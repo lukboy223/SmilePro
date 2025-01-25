@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Person;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class PersonFactory extends Factory
 {
+    protected $model = Person::class;
+
     /**
      * Define the model's default state.
      *
@@ -17,12 +20,9 @@ class PersonFactory extends Factory
     public function definition(): array
     {
         return [
+            'UserId' => \App\Models\User::factory(),
             'FirstName' => $this->faker->firstName,
-            'MiddleName' => $this->faker->optional()->firstName,
+            'MiddleName' => $this->faker->optional()->firstName(10),
             'LastName' => $this->faker->lastName,
-            'BirthDate' => $this->faker->date,
-            'IsActive' => $this->faker->boolean,
-            'Note' => $this->faker->optional()->sentence,
-        ];
-    }
-}
+            'DateOfBirth' => $this->faker->date
+        ];}}
