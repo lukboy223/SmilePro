@@ -37,9 +37,20 @@ route::get('/about', function () {
     return view('about');
 });
 
-<<<<<<< HEAD
 Route::get('/home', [HomeController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-=======
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->middleware(['auth', 'verified', CheckAdmin::class])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->middleware(['auth', 'verified', CheckAdmin::class])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->middleware(['auth', 'verified', CheckAdmin::class])->name('profile.destroy');
+});
+
+Route::get('/admin', function () {
+    return view('admin.adminhome');
+})->middleware(['auth', 'verified', CheckAdmin::class
+])->name('admin');
+
+Route::get('/EmployeeView', [employeeController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('employee.index');
 Route::get('/Employee/View', [employeeController::class, 'index'])->name('employee.index');
 
 Route::get('/Employee/Create', [employeeController::class, 'create'])->name('employee.create');
@@ -50,21 +61,6 @@ Route::patch('/Employee/Update/{id}', [employeeController::class, 'update'])->na
 
 Route::delete('/Employee/Destroy/{id}', [employeeController::class, 'destroy'])->name('employee.destroy');
 
->>>>>>> user_story-18-bestaande-medewerker-wijzigen
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->middleware(['auth', 'verified', CheckAdmin::class])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->middleware(['auth', 'verified', CheckAdmin::class])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->middleware(['auth', 'verified', CheckAdmin::class])->name('profile.destroy');
-});
-
-<<<<<<< HEAD
-Route::get('/admin', function () {
-    return view('admin.adminhome');
-})->middleware(['auth', 'verified', CheckAdmin::class
-])->name('admin');
-
-Route::get('/EmployeeView', [employeeController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('employee.index');
 
 // werkt
 Route::get('/treatment/index', [TreatmentController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('treatment.index');
@@ -88,6 +84,3 @@ Route::delete('/user/destroy/{id}', [UserController::class, 'destroy'])->middlew
 
 
 require __DIR__ . '/auth.php';
-=======
-require __DIR__ . '/auth.php';
->>>>>>> user_story-18-bestaande-medewerker-wijzigen

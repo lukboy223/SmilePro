@@ -38,7 +38,7 @@
             </tr>
             @if($employees->isEmpty())
             <tr>
-                <td colspan="5" class="errorTableRow">
+                <td colspan="7" class="errorTableRow">
                     Geen werknemers kunnen vinden, probeer het later opnieuw
                 </td>
             </tr>
