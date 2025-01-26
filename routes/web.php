@@ -6,6 +6,7 @@ use App\Http\Controllers\TreatmentController;
 use App\Http\Controllers\AvailabilityController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PatientController;
 use App\Http\Middleware\CheckAdmin;
 use Illuminate\Container\Attributes\Auth;
 use App\Http\Controllers\UserController;
@@ -13,6 +14,7 @@ use App\Http\Controllers\StatiekController;
 use App\Http\Middleware\CheckEmployee;
 
 
+Route::resource('patients', PatientController::class);
 
 // werkt
 Route::get('/availabilities', [AvailabilityController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('availability.index');

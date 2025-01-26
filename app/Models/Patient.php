@@ -2,13 +2,25 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
 class Patient extends Model
 {
+    use HasFactory;
 
-    use hasFactory;
+    protected $table = 'patient'; // Specify the table name
 
-    protected $table = 'Patient';
+    public function person()
+    {
+        return $this->belongsTo(Person::class, 'PersonId');
+    }
+
+    protected $fillable = [
+        'PersonId',
+        'Number',
+        'MedicalRecord',
+
+        // Add other fields that you want to be mass-assignable
+    ];
 }
