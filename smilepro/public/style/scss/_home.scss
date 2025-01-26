@@ -1,0 +1,151 @@
+//home page styling
+
+
+//top section of the homepage with text on the left and image on the right
+.homeSection1{
+    padding: 4em;
+    width: 100%;
+    justify-content: space-between;
+    .homeSection1Text{
+        margin-top: 6em;
+
+        h1{
+            font-size: 5em;
+        }
+        p{
+            font-size: 1.5em;
+        }
+        button{
+            border-style: none;
+            padding: 1em;
+            background-color: #5F1A37;
+            color: white;
+            font-size: 1.3em;
+        }
+    }
+    .homeSection1Img{
+        height: 40em;
+        img{
+            float: right;
+            
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
+
+//second section of the homepage, blue bar with 3 texts in it
+.homeSection2{
+    margin: 0;
+    background-color: #85C9C6;
+    width: 100%;
+    padding: 4em;
+    justify-content: space-between;
+
+    .homeSection2Text2{
+        text-align: center;
+    }
+    .homeSection2Text3{
+        text-align: end;
+    }
+    h2{
+        font-size: 3em;
+    }
+    p{
+        font-size: 1.2em;
+    }
+}
+
+//third section of the homepage, text on the right and image on the left
+.homeSection3{
+    padding: 4em;
+    width: 100%;
+    justify-content: space-between;
+    .homeSection3Text{
+        margin-top: 6em;
+        text-align: end;
+
+        h1{
+            font-size: 5em;
+        }
+        p{
+            font-size: 1.5em;
+        }
+        button{
+            border-style: none;
+            padding: 1em;
+            background-color: #5F1A37;
+            color: white;
+            font-size: 1.3em;
+        }
+    }
+    .homeSection3Img{
+        height: 40em;
+        img{
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
+//underneath the third section, it's just a black line across the screen
+.HomeLine{
+    width: 90%;
+    margin: auto;
+    background-color: black;
+    height: 5px;
+    border-radius: 90px;
+}
+//fourth and last section of the homepage with the 3 images of employees on them
+.homeSection4{
+    padding: 6em;
+    width: 100%;
+    .homeSection4TextCont{
+        position: relative;
+        padding-left: 4em;
+        padding-top: 4em;
+        padding-bottom: 4em;
+        padding-right: 0;
+        background-color: #776885;
+        .homeSection4Text{
+            height: 25em;
+            padding: 3em;
+            color: white;
+            h3{
+                font-size: 2.5em;
+            }
+        }
+    }
+    .homeSection4Line{
+        position: relative;
+        width: 80%;
+        height: 5px;
+        background-color: white;
+        margin-top: 2em;
+        margin-bottom: 2em;
+        right: -9em;
+    }
+    .homeSection4ImgCont{
+        padding-left: 5px;
+        padding-right: 5px;
+        img{
+            width: 100%;
+            object-fit: cover;
+            height: 31em;
+            
+        }
+        .homeSection4Img1{
+            object-position: 0% 20%;
+        }
+        .homeSection4Img2{
+            object-position: top;
+        }
+        .homeSection4Img3{
+            object-position: 0% 22%;
+        }
+        .homeSection4Img2{
+            height: 29em !important;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+    }
+}
