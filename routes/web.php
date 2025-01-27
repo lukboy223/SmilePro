@@ -14,11 +14,17 @@ use App\Http\Controllers\StatiekController;
 use App\Http\Middleware\CheckEmployee;
 
 
-Route::resource('patients', PatientController::class);
+
+Route::get('/patients', [PatientController::class, 'index'])->middleware(['auth', 'verified', CheckEmployee::class])->name('patients.index');
+Route::get('/patients/create', [PatientController::class, 'create'])->middleware(['auth', 'verified', CheckEmployee::class])->name('patients.create');
+Route::post('/patients', [PatientController::class, 'store'])->middleware(['auth', 'verified', CheckEmployee::class])->name('patients.store');
+Route::get('/patients/{patient}/edit', [PatientController::class, 'edit'])->middleware(['auth', 'verified', CheckEmployee::class])->name('patients.edit');
+Route::put('/patients/{patient}/update', [PatientController::class, 'update'])->middleware(['auth', 'verified', CheckEmployee::class])->name('patients.update');
+Route::delete('/patients/{patient}/destroy', [PatientController::class, 'destroy'])->middleware(['auth', 'verified', CheckAdmin::class])->name('patients.destroy');
 
 // werkt
-Route::get('/availabilities', [AvailabilityController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('availability.index');
-Route::get('/availabilities/create', [AvailabilityController::class, 'create'])->middleware(['auth', 'verified', CheckAdmin::class])->name('availability.create');
+Route::get('/availabilities', [AvailabilityController::class, 'index'])->middleware(['auth', 'verified', CheckEmployee::class])->name('availability.index');
+Route::get('/availabilities/create', [AvailabilityController::class, 'create'])->middleware(['auth', 'verified', CheckEmployee::class])->name('availability.create');
 Route::post('/availabilities', [AvailabilityController::class, 'store'])->middleware(['auth', 'verified', CheckAdmin::class])->name('availability.store');
 Route::get('/availabilities/{availability}/edit', [AvailabilityController::class, 'edit'])->middleware(['auth', 'verified', CheckAdmin::class])->name('availability.edit');
 Route::put('/availabilities/{availability}/update', [AvailabilityController::class, 'update'])->middleware(['auth', 'verified', CheckAdmin::class])->name('availability.update');
@@ -48,28 +54,32 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/admin', function () {
-    return view('admin.adminhome');
+    return view('dashboards.adminhome');
 })->middleware(['auth', 'verified', CheckAdmin::class
 ])->name('admin');
 
+Route::get('/employee', function () {
+    return view('dashboards.employeehome');
+})->middleware(['auth', 'verified', CheckAdmin::class
+])->name('employee');
+
 Route::get('/EmployeeView', [employeeController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('employee.index');
-Route::get('/Employee/View', [employeeController::class, 'index'])->name('employee.index');
 
-Route::get('/Employee/Create', [employeeController::class, 'create'])->name('employee.create');
-Route::post('/Employee/Store', [employeeController::class, 'store'])->name('employee.store');
+Route::get('/Employee/Create', [employeeController::class, 'create'])->middleware(['auth', 'verified', CheckAdmin::class])->name('employee.create');
+Route::post('/Employee/Store', [employeeController::class, 'store'])->middleware(['auth', 'verified', CheckAdmin::class])->name('employee.store');
 
-Route::get('/Employee/Edit/{id}', [employeeController::class, 'edit'])->name('employee.edit');
-Route::patch('/Employee/Update/{id}', [employeeController::class, 'update'])->name('employee.update');
+Route::get('/Employee/Edit/{id}', [employeeController::class, 'edit'])->middleware(['auth', 'verified', CheckAdmin::class])->name('employee.edit');
+Route::patch('/Employee/Update/{id}', [employeeController::class, 'update'])->middleware(['auth', 'verified', CheckAdmin::class])->name('employee.update');
 
-Route::delete('/Employee/Destroy/{id}', [employeeController::class, 'destroy'])->name('employee.destroy');
+Route::delete('/Employee/Destroy/{id}', [employeeController::class, 'destroy'])->middleware(['auth', 'verified', CheckAdmin::class])->name('employee.destroy');
 
 
 // werkt
-Route::get('/treatment/index', [TreatmentController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('treatment.index');
-Route::get('/treatment/create', [TreatmentController::class, 'create'])->middleware(['auth', 'verified', CheckAdmin::class])->name('treatment.create');
-Route::post('/treatment/store', [TreatmentController::class, 'store'])->middleware(['auth', 'verified', CheckAdmin::class])->name('treatment.store');
-Route::get('/treatment/edit/{id}', [TreatmentController::class, 'edit'])->middleware(['auth', 'verified', CheckAdmin::class])->name('treatment.edit');
-Route::patch('/treatment/update/{id}', [TreatmentController::class, 'update'])->middleware(['auth', 'verified', CheckAdmin::class])->name('treatment.update');
+Route::get('/treatment/index', [TreatmentController::class, 'index'])->middleware(['auth', 'verified', CheckEmployee::class])->name('treatment.index');
+Route::get('/treatment/create', [TreatmentController::class, 'create'])->middleware(['auth', 'verified', CheckEmployee::class])->name('treatment.create');
+Route::post('/treatment/store', [TreatmentController::class, 'store'])->middleware(['auth', 'verified', CheckEmployee::class])->name('treatment.store');
+Route::get('/treatment/edit/{id}', [TreatmentController::class, 'edit'])->middleware(['auth', 'verified', CheckEmployee::class])->name('treatment.edit');
+Route::patch('/treatment/update/{id}', [TreatmentController::class, 'update'])->middleware(['auth', 'verified', CheckEmployee::class])->name('treatment.update');
 Route::delete('/treatment/destroy/{id}', [TreatmentController::class, 'destroy'])->middleware(['auth', 'verified', CheckAdmin::class])->name('treatment.destroy');
 
 

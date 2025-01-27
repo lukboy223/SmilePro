@@ -18,7 +18,7 @@ class PatientFactory extends Factory
     {
         return [
             'personId' => \App\Models\Person::factory(),
-            'Number' => $this->faker->regexify('[A-Za-z0-9]{50}'),
+            'Number' => $this->faker->unique()->numerify('EMP###'),
             'medicalRecord' => $this->faker->text(),
         ];
     }

@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\Person;
 use App\Models\Patient;
 use Illuminate\Support\Facades\DB;
-use League\CommonMark\Extension\Footnote\Event\FixOrphanedFootnotesAndRefsListener;
 
 
 class PatientController extends Controller
@@ -18,8 +17,9 @@ class PatientController extends Controller
     {
         $persons = DB::table('patient')
             ->join('person', 'patient.PersonId', '=', 'person.id')
-            ->select('patient.*', 'person.*')
+            ->select('patient.*', 'patient.id as PId', 'person.*')
             ->simplePaginate(10); // Paginate data
+
 
         return view('patients.index', [
             'persons' => $persons,
