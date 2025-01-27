@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Communication;
 use App\Models\Availability;
 use App\Models\Role;
 use App\Models\employee;
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
     {
         Availability::factory(200)->create();
         User::factory(100)->create();
+        Communication::factory(100)->create();
         Employee::factory()->count(100)->create();
         Treatment::factory()->count(100)->create();
 
@@ -38,7 +40,6 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('cookie123'),
             'email_verified_at' => now(),
         ]);
-        
         Role::factory()->create([
             'name' => 'Patient'
         ]);

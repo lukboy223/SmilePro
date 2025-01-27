@@ -32,10 +32,17 @@ Route::delete('/availabilities/{availability}/destroy', [AvailabilityController:
 
 // werkt
 Route::get('/statistieken/index', [StatiekController::class, 'index'])->middleware(['auth', 'verified', CheckAdmin::class])->name('statistieken.index');
+use App\Http\Controllers\CommunicationController;
 
 Route::get('/', function () {
     return view('home');
 })->name('home');
+
+// communications
+Route::get('/communications', [CommunicationController::class, 'index'])->name('communications.index');
+// create   // store
+Route::get('/communications/create', [CommunicationController::class, 'create'])->name('communications.create');
+Route::post('/communications', [CommunicationController::class, 'store'])->name('communications.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
