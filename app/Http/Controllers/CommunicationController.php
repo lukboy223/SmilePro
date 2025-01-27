@@ -25,7 +25,7 @@ class CommunicationController extends Controller
             'PatientId' => 'required|integer',
             'EmployeeId' => 'required|integer',
             'Message' => 'required|string',
-            'SentDate' => 'required|date',
+            'SentDate' => 'required|date|date_format:Y-m-d',
         ]);
 
         Communication::create($data);

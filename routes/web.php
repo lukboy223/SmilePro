@@ -38,6 +38,8 @@ Route::get('/', function () {
     return view('home');
 })->name('home');
 
+
+
 // communications
 Route::get('/communications', [CommunicationController::class, 'index'])->name('communications.index');
 // create   // store

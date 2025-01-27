@@ -136,6 +136,8 @@ class employeeController extends Controller
         DB::table('employee')->where('id', $employee->id)->delete();
         DB::table('person')->where('id', $employee->person_id)->delete();
         DB::table('users')->where('id', $employee->user_id)->delete();
+
+        
         return redirect()->route('employee.index')->with('success', 'Medewerker is succesvol verwijderd');
     }
 }
