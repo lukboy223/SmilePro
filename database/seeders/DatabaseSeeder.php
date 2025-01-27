@@ -31,6 +31,14 @@ class DatabaseSeeder extends Seeder
             'email_verified_at' => now(),
         ]);
         
+        User::factory()->create([
+            'name' => 'Employee',
+            'email' => 'Employee@mail.com',
+            'role_id' => 2,
+            'password' => bcrypt('cookie123'),
+            'email_verified_at' => now(),
+        ]);
+        
         Role::factory()->create([
             'name' => 'Patient'
         ]);
