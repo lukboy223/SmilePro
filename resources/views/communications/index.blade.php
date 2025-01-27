@@ -29,8 +29,6 @@
                         <th class="px-4 py-2 border border-gray-300">EmployeeId</th>
                         <th class="px-4 py-2 border border-gray-300">Bericht</th>
                         <th class="px-4 py-2 border border-gray-300">VerzondenDatum</th>
-                        <th class="px-4 py-2 border border-gray-300">Edit</th>
-                        <th class="px-4 py-2 border border-gray-300">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,22 +43,6 @@
                             <td class="px-4 py-2 border border-gray-300">{{ $communication->EmployeeId }}</td>
                             <td class="px-4 py-2 border border-gray-300">{{ $communication->Message }}</td>
                             <td class="px-4 py-2 border border-gray-300">{{ $communication->SentDate }}</td>
-                            <td class="px-4 py-2 border border-gray-300">
-                                <a href="{{ route('communications.index', ['communication' => $communication]) }}" 
-                                   class="text-[#5F1A37] font-semibold hover:underline">
-                                    Edit
-                                </a>
-                            </td>
-                            <td class="px-4 py-2 border border-gray-300">
-                                <form method="POST" action="{{ route('communications.index', ['communication' => $communication]) }}">
-                                    @csrf
-                                    @method('delete')
-                                    <button type="submit" 
-                                            class="text-red-600 font-semibold hover:underline">
-                                        Delete
-                                    </button>
-                                </form>
-                            </td>
                         </tr>
                     @endforeach
                     @endif

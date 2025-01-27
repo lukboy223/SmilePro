@@ -12,6 +12,7 @@
                     {{ __("Je bent ingelogged!") }}
                     {{ __("Als een medewerker") }} <br> <br>
                     <a href="{{route('treatment.index')}}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded mx-4">Behandeling overzicht</a>
+                    <a href="{{route('communications.index')}}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded mx-4">Communicaties overzicht</a> <br><br>
                     <a href="{{route('availability.index')}}" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded mx-4">Beschikbaarheid overzicht</a>
                     <a href="/patients" class="bg-[#5F1A37] hover:bg-[#721B43] text-white font-bold py-2 px-4 rounded mx-4 mt-3">Patient overzicht</a>
                 </div>
