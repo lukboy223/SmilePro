@@ -60,10 +60,10 @@
                         </td>
                          <td class="px-2 py-1 border border-gray-300">
                             {{-- Edit button  --}}
-                            <a style="background-color: #5F1A37; color: white;" href="{{ route('patients.edit', $person->id) }}" class="btn">
+                            <a style="background-color: #5F1A37; color: white;" href="{{ route('patients.edit', $person->PId) }}" class="btn">
                                 Bewerken
                             </a>
-                            <form action="{{ route('patients.destroy', $person->id) }}" method="POST" style="display:inline;">
+                            <form action="{{ route('patients.destroy', $person->PId) }}" method="POST" style="display:inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger" style="background-color: #d9534f; color: white;">
