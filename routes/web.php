@@ -10,10 +10,10 @@ use App\Http\Controllers\UserController;
 
 
 Route::get('test', function () {
-     Illuminate\Support\Facades\Mail::to('339543@student.mboutrecht.nl')->send(
+    Illuminate\Support\Facades\Mail::to('339543@student.mboutrecht.nl')->send(
        new App\Mail\ContactPosted()
-     );
-     return 'Done';
+    );
+    return 'Done';
  });
 
 Route::get('/', function () {
